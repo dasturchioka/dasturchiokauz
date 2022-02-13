@@ -29,7 +29,7 @@
         class="text-white font-dm sm:text-3xl text-lg sm:leading-10 leading-7 my-7 font-light"
       >
         Men Sardor Aminov, web dasturchi va UI/UX dizaynerman. 2020-yildan beri
-        shu sohalarda faoliyat yuritib kelmoqdaman. Yoshim 16 da. Asli xorazmlik
+        shu sohalarda faoliyat yuritib kelmoqdaman. Yoshim {{age}} da. Asli xorazmlik
         bo’lsam ham, hozirda O’zbekistonning poytaxti Toshkent shahrida
         istiqomat qilaman.
       </p>
@@ -39,7 +39,9 @@
         Faoliyatim davomida turli xil web saytlar va ularning dizaynlari, smm
         posterlar qilganman. O’quv markazda ma’lum muddat davomida mentor
         sifatida amaliyot o’taganman. Hozirgi kunda
-        <a class="text-green transition-colors hover:text-green-opacity" href=""
+        <a
+          class="text-green transition-colors hover:text-green-opacity"
+          href="https://livecoders.uz"
           >livecoders</a
         >
         milliy online ta’lim platformasining hammuassisiman. JavaScript
@@ -63,6 +65,12 @@
 <script>
 export default {
   name: "IndexPage",
+  computed: {
+    age() {
+      const ageInMilliseconds = new Date() - new Date("2006-03-07");
+      return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365);
+    },
+  },
 };
 </script>
 
