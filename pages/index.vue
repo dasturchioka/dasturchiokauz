@@ -9,11 +9,19 @@
         <span class="text-green">.</span>
       </h1>
       <div class="links font-dmMono text-sm">
-        <a class="text-white font-light" href="https://instagram.com/dasturchioka">instagram</a>
+        <a
+          class="text-white font-light"
+          href="https://instagram.com/dasturchioka"
+          >instagram</a
+        >
         <span class="text-green">/</span>
-        <a class="text-white font-light" href="https://github.com/sardoraminov">github</a>
+        <a class="text-white font-light" href="https://github.com/sardoraminov"
+          >github</a
+        >
         <span class="text-green">/</span>
-        <a class="text-white font-light" href="https://t.me/dasturchiokauz">telegram</a>
+        <a class="text-white font-light" href="https://t.me/dasturchiokauz"
+          >telegram</a
+        >
       </div>
     </div>
     <div class="home-content sm:w-4/5">
@@ -186,6 +194,13 @@ h1::after {
   }
   62% {
     transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+@media (max-width: 878px) {
+  h1::after,
+  h1::before {
+    display: none;
   }
 }
 </style>
