@@ -9,11 +9,11 @@
         <span class="text-green">.</span>
       </h1>
       <div class="links font-dmMono text-sm">
-        <a class="text-white font-light" href="">instagram</a>
+        <a class="text-white font-light" href="https://instagram.com/dasturchioka">instagram</a>
         <span class="text-green">/</span>
-        <a class="text-white font-light" href="">github</a>
+        <a class="text-white font-light" href="https://github.com/sardoraminov">github</a>
         <span class="text-green">/</span>
-        <a class="text-white font-light" href="">telegram</a>
+        <a class="text-white font-light" href="https://t.me/dasturchiokauz">telegram</a>
       </div>
     </div>
     <div class="home-content sm:w-4/5">
