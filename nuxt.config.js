@@ -15,7 +15,11 @@ export default {
           "Dasturchi, mentor va dizayner Sardor Aminov ning shaxsiy veb sayti",
       },
       { name: "format-detection", content: "telephone=no" },
-      // Meta tags for improving SEO
+      {
+        name: "robots",
+        content: "index, follow",
+      },
+
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Sardor Aminov | dasturchioka" },
       {
