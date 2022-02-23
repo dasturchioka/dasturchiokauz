@@ -33,14 +33,6 @@
         xorazmlik bo’lsam ham, hozirda O’zbekistonning poytaxti Toshkent
         shahrida istiqomat qilaman.
       </p>
-      <ins
-        class="adsbygoogle"
-        style="display: block"
-        data-ad-client="ca-pub-1535584307055446"
-        data-ad-slot="1299314233"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
       <p
         class="text-white font-dm sm:text-3xl text-lg sm:leading-10 leading-7 my-7 font-light"
       >
@@ -66,14 +58,6 @@
         muhitga tez moslasha oladigan, kamtarona hayot tarzini tanlagan oddiy
         yigitlardan biriman.
       </p>
-      <ins
-        class="adsbygoogle"
-        style="display: block"
-        data-ad-format="fluid"
-        data-ad-layout-key="-gw-3+1f-3d+2z"
-        data-ad-client="ca-pub-1535584307055446"
-        data-ad-slot="3305201488"
-      ></ins>
     </div>
   </div>
 </template>
