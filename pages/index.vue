@@ -1,14 +1,6 @@
 <template>
   <div class="home flex flex-col items-start sm:px-16 px-5 pb-10 min-h-screen">
     <div class="bg"></div>
-    <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-client="ca-pub-1535584307055446"
-      data-ad-slot="1299314233"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
     <div class="home-titles sm:mt-28 mt-16 mb-10 sm:mb-11">
       <h1
         class="font-mont font-extrabold text-white text-3xl sm:text-6xl mb-3 inline-block"
@@ -41,6 +33,14 @@
         xorazmlik bo’lsam ham, hozirda O’zbekistonning poytaxti Toshkent
         shahrida istiqomat qilaman.
       </p>
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-1535584307055446"
+        data-ad-slot="1299314233"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
       <p
         class="text-white font-dm sm:text-3xl text-lg sm:leading-10 leading-7 my-7 font-light"
       >
@@ -66,6 +66,14 @@
         muhitga tez moslasha oladigan, kamtarona hayot tarzini tanlagan oddiy
         yigitlardan biriman.
       </p>
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-format="fluid"
+        data-ad-layout-key="-gw-3+1f-3d+2z"
+        data-ad-client="ca-pub-1535584307055446"
+        data-ad-slot="3305201488"
+      ></ins>
     </div>
   </div>
 </template>
