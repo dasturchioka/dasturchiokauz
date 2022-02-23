@@ -11,6 +11,9 @@ export default {
         async: true,
         crossorigin: "anonymous"
       },
+      {
+        src: "js/script.js"
+      }
     ],
     meta: [
       { charset: "utf-8" },
