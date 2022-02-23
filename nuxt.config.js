@@ -5,6 +5,13 @@ export default {
     htmlAttrs: {
       lang: "en",
     },
+    script: [
+      {
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1535584307055446",
+        async: true,
+        crossorigin: "anonymous"
+      },
+    ],
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
