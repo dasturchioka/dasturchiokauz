@@ -11,8 +11,12 @@ export default {
       {
         hid: "description",
         name: "description",
+        content: "Dasturchi, mentor, content maker. G'irt iplos odam.",
+      },
+      {
+        name: "keywords",
         content:
-          "Dasturchi, mentor va dizayner Sardor Aminov ning shaxsiy veb sayti",
+          "dasturchioka, dasturchilar, dasturchiaka, sardor aminov, aminov sardor, sardoraminov, dasturchi oka, javascript dasturchi",
       },
       { name: "format-detection", content: "telephone=no" },
       {
@@ -24,8 +28,7 @@ export default {
       { property: "og:title", content: "Sardor Aminov | dasturchioka" },
       {
         property: "og:description",
-        content:
-          "Dasturchi, mentor va dizayner Sardor Aminov ning shaxsiy veb sayti",
+        content: "Dasturchi, mentor, content maker. G'irt iplos odam.",
       },
       { property: "og:image", content: "/brand.jpg" },
       {

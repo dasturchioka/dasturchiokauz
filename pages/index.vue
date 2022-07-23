@@ -1,64 +1,49 @@
 <template>
-  <div class="home flex flex-col items-start sm:px-16 px-5 pb-10 min-h-screen">
+  <div
+    class="home flex flex-col items-center justify-center sm:px-16 px-5 pb-10 min-h-screen"
+  >
     <div class="bg"></div>
-    <div class="home-titles sm:mt-28 mt-16 mb-10 sm:mb-11">
-      <h1
-        class="font-mont font-extrabold text-white text-3xl sm:text-6xl mb-3 inline-block"
-      >
-        <span class="sm:inline hidden">👋</span> Assalomu Alaykum
-        <span class="text-green">.</span>
-      </h1>
-      <div class="links font-dmMono text-sm">
-        <a
-          class="text-white font-light"
-          href="https://instagram.com/dasturchioka"
-          >instagram</a
-        >
-        <span class="text-green">/</span>
-        <a class="text-white font-light" href="https://github.com/sardoraminov"
-          >github</a
-        >
-        <span class="text-green">/</span>
-        <a class="text-white font-light" href="https://t.me/dasturchiokauz"
-          >telegram</a
-        >
+    <div class="home-content mx-3 flex flex-col items-center justify-center">
+      <div class="content-img w-72">
+        <img
+          class="w-full object-cover rounded-full"
+          src="../assets/dastrurchi.jpg"
+          alt="dasturchioka"
+        />
+      </div>
+      <div class="content-titles text-center mt-6 text-white">
+        <h1 class="font-mont text-3xl font-bold">
+          Sardor Aminov <span class="text-green">.</span>
+        </h1>
+        <p class="text-xl mb-3">Dasturchi, mentor, content maker, YouTuber</p>
+        <div class="links">
+          <a
+            target="_blank"
+            class="link font-dmMono"
+            href="https://t.me/dasturchiokauz"
+            >telegram</a
+          >
+          <span class="text-green">/</span>
+          <a
+            target="_blank"
+            class="link font-dmMono"
+            href="https://instagram.com/dasturchioka"
+            >instagram</a
+          >
+          <span class="text-green">/</span>
+          <a
+            target="_blank"
+            class="link font-dmMono"
+            href="https://www.youtube.com/channel/UC0gFVZdSnt4gAGsSQE_nlHw"
+            >youtube</a
+          >
+        </div>
+        <div class="quote opacity-30 italic mt-12">
+          "Bu yerda ma'noli status bo'lishi mumkin edi..."
+        </div>
       </div>
     </div>
-    <div class="home-content sm:w-4/5">
-      <p
-        class="text-white font-dm sm:text-3xl text-lg sm:leading-10 leading-7 my-7 font-light"
-      >
-        Men Sardor Aminov, web dasturchi va UI/UX dizaynerman. 2020-yildan beri
-        shu sohalarda faoliyat yuritib kelmoqdaman. Yoshim {{ age }} da. Asli
-        xorazmlik bo’lsam ham, hozirda O’zbekistonning poytaxti Toshkent
-        shahrida istiqomat qilaman.
-      </p>
-      <p
-        class="text-white font-dm sm:text-3xl text-lg sm:leading-10 leading-7 my-7 font-light"
-      >
-        Faoliyatim davomida turli xil web saytlar va ularning dizaynlari, smm
-        posterlar qilganman. O’quv markazda ma’lum muddat davomida mentor
-        sifatida amaliyot o’taganman. Hozirgi kunda
-        <a
-          class="text-green transition-colors hover:text-green-opacity"
-          href="https://livecoders.uz"
-          >livecoders</a
-        >
-        milliy online ta’lim platformasining hammuassisiman. JavaScript
-        dasturlash tili - asosiy ishlatadigan “qurolim” hisoblanadi. Bu til
-        asosiga qurilgan texnologiyalardan Vue, Nuxt va Nodejs lardan ko’proq
-        foydalanaman.
-      </p>
-      <p
-        class="text-white font-dm sm:text-3xl text-lg sm:leading-10 leading-7 my-7 font-light"
-      >
-        Ilmiy kitoblar, dizayn sohasi va video o’yinlarga qiziqishim yuqori.
-        Bo’sh vaqtlarimda futbol o’ynab turish yoqadi. O’zini prinsiplariga ega,
-        yosh bo’lishiga qaramasdan kelajagi haqida ko’p qayg’uradigan, yangi
-        muhitga tez moslasha oladigan, kamtarona hayot tarzini tanlagan oddiy
-        yigitlardan biriman.
-      </p>
-    </div>
+    <h1 class="title">DASTURCHIOKA</h1>
   </div>
 </template>
 
@@ -75,9 +60,58 @@ export default {
 </script>
 
 <style>
+@media (max-width: 436px) {
+  .text-xl {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 314px) {
+  .content-img {
+    width: 100%;
+  }
+
+  h1 span {
+    display: none;
+  }
+}
+
+.home-content {
+  z-index: 999;
+}
+.title {
+  font-weight: 700;
+  font-size: 80vw;
+  line-height: 140px;
+  -webkit-text-stroke: 4px;
+  -webkit-text-stroke-color: #fff;
+  color: #ffffff4a;
+  z-index: -99;
+  opacity: 0.1;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  transform: translateX(20%);
+  animation: move 30s linear infinite;
+}
+
+@keyframes move {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 body {
+  user-select: none;
+  overflow-x: hidden;
   background: #111111;
   animation: opacity 2s ease-in-out;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes opacity {
@@ -137,78 +171,6 @@ body {
   }
   100% {
     transform: translate(5%, 0);
-  }
-}
-
-h1 {
-  animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch {
-  2%,
-  64% {
-    transform: translate(2px, 0) skew(0deg);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0) skew(0deg);
-  }
-  62% {
-    transform: translate(0, 0) skew(5deg);
-  }
-}
-
-h1::before,
-h1::after {
-  content: "👋 Assalomu Alaykum ";
-  position: absolute;
-  left: 0;
-}
-
-h1::before {
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop {
-  2%,
-  64% {
-    transform: translate(2px, -2px);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 2px);
-  }
-  62% {
-    transform: translate(13px, -1px) skew(-13deg);
-  }
-}
-
-h1::after {
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom {
-  2%,
-  64% {
-    transform: translate(-2px, 0);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0);
-  }
-  62% {
-    transform: translate(-22px, 5px) skew(21deg);
-  }
-}
-
-@media (max-width: 878px) {
-  h1::after,
-  h1::before {
-    display: none;
   }
 }
 </style>
