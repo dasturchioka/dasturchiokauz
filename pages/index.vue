@@ -39,7 +39,7 @@
           >
         </div>
         <div class="quote opacity-30 italic mt-12">
-          "Bu yerda ma'noli status bo'lishi mumkin edi..."
+          "Show your potential"
         </div>
       </div>
     </div>
