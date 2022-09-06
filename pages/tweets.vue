@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <main class="main container mx-auto sm:px-0 px-4">
+  <main class="main container mx-auto sm:px-0 px-4 pb-8">
     <div class="main-top flex flex-row items-center pt-12">
       <button class="fill-white text-white text-3xl" @click="$router.go(-1)">
         <p>&#8592;</p>

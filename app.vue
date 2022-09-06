@@ -103,4 +103,19 @@ useHead({
     transform: translate(5%, 0);
   }
 }
+
+body {
+  animation: fade 2s ease;
+  background: #111111;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 </style>
