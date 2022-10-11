@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <div class="bg-dark pointer-events-auto sm:px-8 px-4 text-white min-h-screen">
+  <div class="bg-dark pointer-events-auto sm:px-8 px-4 pb-4 text-white min-h-screen">
     <h1 class="text-2xl font-bold pb-4 pt-8">Insonlarning fikrlarini o'qish texnikasi</h1>
     <p class="leading-7 pb-6">
       Telepatik qobiliyatlar har bir insonning tabiatiga xosdir. Ularni
