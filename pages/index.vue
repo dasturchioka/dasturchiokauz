@@ -38,17 +38,11 @@
             >youtube</a
           >
         </div>
-        <!-- <div class="contact mt-6 border p-4 pb-6">
+        <div class="contact mt-6 border p-4 pb-6">
           <p class="font-dm text-2xl font-bold text-green mb-4">Web-sayt, telegram bot kerakmi?</p>
           <a href="https://t.me/okashettalar_bot" class="bg-green rounded px-4 py-2" target="_blank">Yozib qoldiring</a>
-        </div> -->
-        <div class="mt-10">
-          <nuxt-link
-            to="/osiyo"
-            class="bg-green px-4 py-2 rounded"
-            >Kurs ishi</nuxt-link
-          >
         </div>
+        
       </div>
     </div>
     <h1 class="title">DASTURCHIOKA</h1>
