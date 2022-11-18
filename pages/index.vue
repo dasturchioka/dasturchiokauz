@@ -15,7 +15,7 @@
         <h1 class="font-mont text-3xl font-bold">
           Sardor Aminov <span class="text-green">.</span>
         </h1>
-        <p class="text-xl mb-3">Dasturchi, mentor, content maker, YouTuber</p>
+        <p class="text-xl mb-3">Dasturchi, mentor, youtuber</p>
         <div class="links">
           <a
             target="_blank"
@@ -37,7 +37,10 @@
             href="https://www.youtube.com/channel/UC0gFVZdSnt4gAGsSQE_nlHw"
             >youtube</a
           >
-        </div>        
+        </div>
+        <div class="quote mt-10">
+          <p class="italic opacity-60">"Only rat race escapers can control their income regularly"</p>
+        </div>
       </div>
     </div>
     <h1 class="title">DASTURCHIOKA</h1>
