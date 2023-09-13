@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: Chaviera;
+  src: url("../fonts/Chaviera.otf") format("opentype");
+}
