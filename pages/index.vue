@@ -1,176 +1,108 @@
+<script setup></script>
+
 <template>
-  <div
-    class="home flex flex-col items-center justify-center sm:px-16 px-5 pb-10 min-h-screen"
-  >
-    <div class="bg"></div>
-    <div class="home-content mx-3 flex flex-col items-center justify-center">
-      <div class="content-img w-72">
+  <div class="home-page container mx-auto sm:px-4 px-2 text-white">
+    <div class="images h-auto">
+      <div class="img">
         <img
-          class="w-full object-cover rounded-full"
-          src="../assets/dastrurchi.jpg"
-          alt="dasturchioka"
+          class="w-full h-full rounded-2xl object-cover"
+          src="/images/profile1.png"
+          alt="Sardor Aminov, dasturchioka"
         />
       </div>
-      <div class="content-titles text-center mt-6 text-white">
-        <h1 class="font-mont text-3xl font-bold">
-          Sardor Aminov <span class="text-green">.</span>
+      <div class="img">
+        <img
+          class="w-full h-full rounded-2xl object-cover"
+          src="/images/profile2.png"
+          alt="Sardor Aminov, dasturchioka"
+        />
+      </div>
+      <div class="img">
+        <img
+          class="w-full h-full rounded-2xl object-cover"
+          src="/images/profile3.png"
+          alt="Sardor Aminov, dasturchioka"
+        />
+      </div>
+    </div>
+    <div class="text-container flex flex-col items-start">
+      <div class="top flex flex-col items-start my-8">
+        <h1
+          class="title font-chaviera font-bold md:text-6xl sm:text-4xl text-3xl"
+        >
+          Sardor Aminov
         </h1>
-        <p class="text-xl mb-3">Dasturchi, mentor, youtuber</p>
-        <div class="links">
-          <a
-            target="_blank"
-            class="link font-dmMono"
-            href="https://t.me/dasturchiokauz"
-            >telegram</a
-          >
-          <span class="text-green">/</span>
-          <a
-            target="_blank"
-            class="link font-dmMono"
-            href="https://instagram.com/dasturchioka"
-            >instagram</a
-          >
-          <span class="text-green">/</span>
-          <a
-            target="_blank"
-            class="link font-dmMono"
-            href="https://www.youtube.com/channel/UC0gFVZdSnt4gAGsSQE_nlHw"
-            >youtube</a
-          >
+        <div
+          class="badge rounded-full sm:px-4 sm:py-2 px-2  font-mont sm:text-lg text-sm border border-white w-auto"
+        >
+          Builder & doer & designer
         </div>
-        <div class="quote mt-10">
-          <p class="italic opacity-60">"Only rat race escapers can control their income regularly"</p>
+      </div>
+      <div class="middle">
+        <p class="font-mont md:text-4xl">
+          Create elegant things by combining design and logic. Web developer,
+          mostly frontender. Amateur trader & young entrepreneur.
+        </p>
+        <div class="social-media flex items-center space-x-4 mt-8">
+          <TelegramIcon />
+          <LinkedinLogo />
+          <GithubIcon />
+          <TwitterLogo />
+          <YTLogo />
         </div>
       </div>
     </div>
-    <h1 class="title">DASTURCHIOKA</h1>
   </div>
 </template>
 
-<script>
-export default {
-  name: "IndexPage",
-  computed: {
-    age() {
-      const ageInMilliseconds = new Date() - new Date("2006-03-07");
-      return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365);
-    },
-  },
-};
-</script>
+<style scoped>
+.images {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 15px;
+}
 
-<style>
-@media (max-width: 436px) {
-  .text-xl {
-    font-size: 14px;
-    margin-top: 0;
-    margin-bottom: 15px;
+.images .img {
+  height: 190px;
+}
+
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .images .img {
+    height: 140px;
   }
 }
 
-@media (max-width: 314px) {
-  .content-img {
-    width: 100%;
+@media (max-width: 436px) {
+  .images {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 
-  h1 span {
+  .images .img {
+    height: 110px;
+  }
+}
+
+@media (max-width: 350px) {
+  .images .img:nth-child(1),
+  .images .img:nth-child(2) {
     display: none;
   }
-}
 
-.home-content {
-  z-index: 999;
-}
-.title {
-  font-weight: 700;
-  font-size: 80vw;
-  line-height: 140px;
-  -webkit-text-stroke: 4px;
-  -webkit-text-stroke-color: #fff;
-  color: #ffffff4a;
-  z-index: -99;
-  opacity: 0.1;
-  position: fixed;
-  top: 35%;
-  left: 0;
-  transform: translateX(20%);
-  animation: move 30s linear infinite;
-}
+  .images {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
 
-@keyframes move {
-  to {
-    transform: translateX(-100%);
+  .images .img {
+    height: 140px;
   }
 }
 
-body {
-  user-select: none;
-  overflow-x: hidden;
-  background: #111111;
-  animation: opacity 2s ease-in-out;
-}
-
-*::-webkit-scrollbar {
-  display: none;
-}
-
-@keyframes opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.bg {
-  background: transparent url(./assets/noise.png) repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation 0.2s infinite;
-  width: 200%;
-  height: 200vh;
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  visibility: visible;
-  z-index: -1;
-}
-
-@keyframes bg-animation {
-  0% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(-5%, -5%);
-  }
-  20% {
-    transform: translate(-10%, 5%);
-  }
-  30% {
-    transform: translate(5%, -10%);
-  }
-  40% {
-    transform: translate(-5%, 15%);
-  }
-  50% {
-    transform: translate(-10%, 5%);
-  }
-  60% {
-    transform: translate(15%, 0);
-  }
-  70% {
-    transform: translate(0, 10%);
-  }
-  80% {
-    transform: translate(-15%, 0);
-  }
-  90% {
-    transform: translate(10%, 5%);
-  }
-  100% {
-    transform: translate(5%, 0);
-  }
+.images img {
+  filter: grayscale(100%);
 }
 </style>
