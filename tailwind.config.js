@@ -14,6 +14,7 @@ module.exports = {
         chaviera: ["Chaviera", "serif"],
         poppins: ["Poppins", "sans-serif"],
         mont: ["Montserrat", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },

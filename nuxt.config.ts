@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     },
   },
   ssr: false,
-  modules: [
-    '@nuxt/image',
-  ],
+  modules: ["@nuxt/image"],
+  app: {
+    pageTransition: { name: "page", mode: "out-in", type: "transition" },
+  },
 });
