@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+definePageMeta({
+  name: "page"
+})
+</script>
 
 <template>
   <div class="home-page container mx-auto sm:px-4 px-2 text-white">
@@ -28,7 +32,7 @@
     <div class="text-container flex flex-col items-start">
       <div class="top flex flex-col items-start my-8">
         <h1
-          class="title font-chaviera font-bold md:text-6xl sm:text-4xl text-3xl"
+          class="title font-chaviera font-bold md:text-6xl sm:text-4xl text-3xl text-white"
         >
           Sardor Aminov
         </h1>
