@@ -1,7 +1,11 @@
 <script setup>
 definePageMeta({
-  name: "page"
-})
+  name: "page",
+});
+
+useHead({
+  title: "Dasturchioka | Sardor Aminov",
+});
 </script>
 
 <template>
@@ -37,7 +41,7 @@ definePageMeta({
           Sardor Aminov
         </h1>
         <div
-          class="badge rounded-full sm:px-4 sm:py-2 px-2  font-mont sm:text-lg text-sm border border-white w-auto"
+          class="badge rounded-full sm:px-4 sm:py-2 px-2 font-mont sm:text-lg text-sm border border-white w-auto"
         >
           Builder & doer & designer
         </div>

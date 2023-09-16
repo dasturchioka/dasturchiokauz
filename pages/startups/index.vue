@@ -1,8 +1,12 @@
-<script setup></script>
+<script setup>
+useHead({
+  title: "My startups"
+})
+</script>
 
 <template>
   <div
-    class="text-white h-screen pb-6 pt-10 flex flex-col sm:space-y-16 space-y-10 items-start container mx-auto sm:px-4 px-2"
+    class="text-white h-screen sm:py-10 py-6 flex flex-col sm:space-y-16 space-y-10 container mx-auto sm:px-4 px-2"
   >
     <div class="start-up">
       <h1
