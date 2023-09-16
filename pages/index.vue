@@ -12,21 +12,24 @@ useHead({
   <div class="home-page container mx-auto sm:px-4 px-2 text-white">
     <div class="images h-auto">
       <div class="img">
-        <img
+        <NuxtImg
+          loading="lazy"
           class="w-full h-full rounded-2xl object-cover"
           src="/images/profile1.jpg"
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
       <div class="img">
-        <img
+        <NuxtImg
+          loading="lazy"
           class="w-full h-full rounded-2xl object-cover"
           src="/images/profile2.png"
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
       <div class="img">
-        <img
+        <NuxtImg
+          loading="lazy"
           class="w-full h-full rounded-2xl object-cover"
           src="/images/profile3.jpg"
           alt="Sardor Aminov, dasturchioka"
