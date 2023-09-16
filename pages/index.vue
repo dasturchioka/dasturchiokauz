@@ -14,7 +14,7 @@ useHead({
       <div class="img">
         <img
           class="w-full h-full rounded-2xl object-cover"
-          src="/images/profile1.png"
+          src="/images/profile1.jpg"
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
@@ -28,7 +28,7 @@ useHead({
       <div class="img">
         <img
           class="w-full h-full rounded-2xl object-cover"
-          src="/images/profile3.png"
+          src="/images/profile3.jpg"
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
