@@ -1,8 +1,4 @@
-<script setup>
-definePageMeta({
-  name: "page",
-});
-
+<script setup lang="ts">
 useHead({
   title: "Dasturchioka | Sardor Aminov",
 });
@@ -32,7 +28,7 @@ useHead({
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
-    </div>
+    </div>   
     <div class="text-container flex flex-col items-start">
       <div class="top flex flex-col items-start my-8">
         <h1
