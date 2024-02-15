@@ -49,7 +49,7 @@ useHead({
       <div class="middle">
         <p class="font-mont md:text-4xl">
           Create elegant things by combining design and logic. Web developer,
-          mostly frontender. Amateur trader & young entrepreneur.
+          mostly frontender.
         </p>
         <div class="social-media flex items-center space-x-4 mt-8">
           <TelegramIcon />
