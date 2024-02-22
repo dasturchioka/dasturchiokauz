@@ -30,13 +30,7 @@ const quotes = [
     <nav
       class="nav-links enter-transition-layout flex items-center space-x-2 font-mono sm:text-lg text-base"
     >
-      <NuxtLink to="/">home</NuxtLink>
-      <p class="text-[#565656]">/</p>
-      <NuxtLink to="/startups">start-ups</NuxtLink>
-      <p class="text-[#565656]">/</p>
-      <NuxtLink to="/stack">stack</NuxtLink>
-      <p class="text-[#565656]">/</p>
-      <NuxtLink to="/blog">blog</NuxtLink>
+      <!-- will create something up -->
     </nav>
   </div>
 </template>
