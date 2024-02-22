@@ -1,34 +1,34 @@
-<script setup>
-definePageMeta({
-  name: "page"
-})
+<script setup lang="ts">
+useHead({
+  title: "Dasturchioka | Sardor Aminov",
+});
 </script>
 
 <template>
   <div class="home-page container mx-auto sm:px-4 px-2 text-white">
     <div class="images h-auto">
       <div class="img">
-        <img
+        <NuxtImg
           class="w-full h-full rounded-2xl object-cover"
-          src="/images/profile1.png"
+          src="/images/profile1.jpg"
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
       <div class="img">
-        <img
+        <NuxtImg
           class="w-full h-full rounded-2xl object-cover"
           src="/images/profile2.png"
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
       <div class="img">
-        <img
+        <NuxtImg
           class="w-full h-full rounded-2xl object-cover"
-          src="/images/profile3.png"
+          src="/images/profile3.jpg"
           alt="Sardor Aminov, dasturchioka"
         />
       </div>
-    </div>
+    </div>   
     <div class="text-container flex flex-col items-start">
       <div class="top flex flex-col items-start my-8">
         <h1
@@ -37,7 +37,7 @@ definePageMeta({
           Sardor Aminov
         </h1>
         <div
-          class="badge rounded-full sm:px-4 sm:py-2 px-2  font-mont sm:text-lg text-sm border border-white w-auto"
+          class="badge rounded-full sm:px-4 sm:py-2 px-2 font-mont sm:text-lg text-sm border border-white w-auto"
         >
           Builder & doer & designer
         </div>
@@ -45,7 +45,7 @@ definePageMeta({
       <div class="middle">
         <p class="font-mont md:text-4xl">
           Create elegant things by combining design and logic. Web developer,
-          mostly frontender. Amateur trader & young entrepreneur.
+          mostly frontender.
         </p>
         <div class="social-media flex items-center space-x-4 mt-8">
           <TelegramIcon />

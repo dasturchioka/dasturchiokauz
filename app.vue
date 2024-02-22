@@ -1,11 +1,11 @@
-<script setup>
+<script setup lang="ts">
 const quotes = [
   "passion for programming",
-  "remaking myself",
+  "the more calm he is, the more strength he has",
   "intelligence is the sexiest thing humanity ever has",
   "Hurry up and live",
   "The best answer to anger is silence",
-  "The past is not just the past",
+  "Don't care",
   "Man conquers the world by conquering himself",
 ];
 </script>
@@ -30,13 +30,7 @@ const quotes = [
     <nav
       class="nav-links enter-transition-layout flex items-center space-x-2 font-mono sm:text-lg text-base"
     >
-      <NuxtLink to="/">home</NuxtLink>
-      <p class="text-[#565656]">/</p>
-      <NuxtLink to="/startups">start-ups</NuxtLink>
-      <p class="text-[#565656]">/</p>
-      <NuxtLink to="/stack">stack</NuxtLink>
-      <p class="text-[#565656]">/</p>
-      <NuxtLink to="/blog">blog</NuxtLink>
+      <!-- will create something up -->
     </nav>
   </div>
 </template>
