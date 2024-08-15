@@ -42,7 +42,7 @@ a.router-link-exact-active {
   @apply text-white transition font-bold;
 }
 
-a:not(.router-link-active, .router-link-exact-active) {
+a:not(.router-link-active, .router-link-exact-active, .donation) {
   @apply text-[#565656];
 }
 
