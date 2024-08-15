@@ -52,7 +52,7 @@ useHead({
 				<a
 					href="https://tirikchilik.uz/dasturchioka"
 					target="_blank"
-					class="font-mont md:text-xl my-6 text-white transition-all hover:underline flex items-center w-full justify-start donation"
+					class="font-mont md:text-xl my-6 text-white transition-all hover:underline flex items-center w-full justify-start donation-text"
 					><LinkIcon class="mr-2 w-[18px]" />Yo, you got my money on your wallet, give it up now!
 				</a>
 			</div>
