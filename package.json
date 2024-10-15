@@ -1,25 +1,30 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev --host",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/types": "^2.17.3",
-    "@nuxt/typescript-build": "^3.0.2",
-    "autoprefixer": "^10.4.15",
-    "nuxt": "^3.10.2",
-    "postcss": "^8.4.29",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "@nuxt/image": "^1.0.0-rc.1",
-    "vue3-marquee": "^4.0.0"
-  }
+	"name": "nuxt-app",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev --host",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"@nuxt/devtools": "latest",
+		"@nuxt/types": "^2.17.3",
+		"@nuxt/typescript-build": "^3.0.2",
+		"@pinia/nuxt": "^0.5.5",
+		"autoprefixer": "^10.4.15",
+		"nuxt": "^3.10.2",
+		"postcss": "^8.4.29",
+		"tailwindcss": "^3.3.3",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"@nuxt/image": "^1.0.0-rc.1",
+		"pinia": "^2.2.4",
+		"vue3-marquee": "^4.0.0"
+	},
+	"overrides": {
+		"vue": "latest"
+	}
 }
