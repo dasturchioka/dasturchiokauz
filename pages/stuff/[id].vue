@@ -33,11 +33,11 @@ const currentStuff = computed(() => {
 			>
 				<path d="m15 18-6-6 6-6" />
 			</svg>
-			Orqaga
+			Back
 		</button>
 		<div v-if="currentStuff" class="stuff w-full">
-			<div class="img sm:h-[200px] h-[100px] rounded-3xl overflow-hidden w-full">
-				<img class="w-full h-full object-cover opacity-20" :src="NovdaQuizCard" alt="Novda quiz" />
+			<div class="img md:h-[400px] sm:h-[200px] h-[100px] rounded-3xl overflow-hidden w-full">
+				<img class="w-full h-full object-cover" :src="currentStuff.img" alt="Novda quiz" />
 			</div>
 			<div class="main">
 				<div class="titles my-4">
@@ -49,14 +49,26 @@ const currentStuff = computed(() => {
 					<span
 						v-for="badge in currentStuff.badges"
 						:key="badge.name"
-						:class="badge.classes"
+						:class="[
+							badge.name === 'typescript'
+								? 'bg-blue-700'
+								: badge.name === 'vuejs'
+								? 'bg-emerald-600'
+								: badge.name === 'nodejs'
+								? 'bg-green-700'
+								: badge.name === 'postgresql'
+								? 'bg-indigo-500'
+								: badge.name === 'javascript'
+									? 'bg-yellow-500'
+								: '',
+						]"
 						class="rounded px-1 text-sm font-semibold"
 						>{{ badge.name }}</span
 					>
 				</div>
 				<div class="links my-6 space-y-6">
 					<div class="demo">
-						<p class="flex items-center space-x-2">
+						<p class="flex items-center space-x-2 font-bold">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="24"
@@ -86,7 +98,7 @@ const currentStuff = computed(() => {
 						</div>
 					</div>
 					<div class="source">
-						<p class="flex items-center space-x-2">
+						<p class="flex items-center space-x-2 font-bold">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="24"

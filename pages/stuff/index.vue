@@ -33,7 +33,19 @@ useHead({
 						<span
 							v-for="badge in s.badges"
 							:key="badge.name"
-							:class="badge.classes"
+							:class="[
+								badge.name === 'typescript'
+									? 'bg-blue-700'
+									: badge.name === 'vuejs'
+									? 'bg-emerald-600'
+									: badge.name === 'nodejs'
+									? 'bg-green-700'
+									: badge.name === 'postgresql'
+									? 'bg-indigo-500'
+									: badge.name === 'javascript'
+									? 'bg-yellow-500'
+									: '',
+							]"
 							class="rounded px-1 text-sm font-semibold"
 							>{{ badge.name }}</span
 						>
