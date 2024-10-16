@@ -1,6 +1,30 @@
 <script setup lang="ts">
 useHead({
 	title: 'Dasturchioka | Sardor Aminov',
+	meta: [
+		{ charset: 'utf-8' },
+		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+		{
+			key: 'description',
+			name: 'description',
+			content:
+				'Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff.',
+		},
+		{ key: 'og:title', property: 'og:title', content: 'Dasturchioka | Sardor Aminov' },
+		{
+			key: 'og:description',
+			property: 'og:description',
+			content:
+				'Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff.',
+		},
+		{
+			key: 'og:image',
+			property: 'og:image',
+			content:
+				'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100',
+		},
+		{ key: 'og:url', property: 'og:url', content: 'https://dasturchioka.uz' },
+	],
 })
 </script>
 

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import NovdaQuizCard from '@/assets/img/novda-quiz-card.png'
 import { storeToRefs } from 'pinia'
 import { useStuffStore } from '~/stores/stuff'
 
@@ -10,6 +9,45 @@ const { stuff } = storeToRefs(stuffStore)
 
 const currentStuff = computed(() => {
 	return stuff.value.find(s => s.id === route.params.id)
+})
+
+useHead({
+	title() {
+		return currentStuff.value?.title || 'Stuff'
+	},
+	meta: [
+		{ charset: 'utf-8' },
+		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+		{
+			key: 'description',
+			name: 'description',
+			content: computed(() => currentStuff.value?.shortDescription || 'Stuff'),
+		},
+		{
+			key: 'og:title',
+			property: 'og:title',
+			content: computed(() => currentStuff.value?.title || 'Stuff'),
+		},
+		{
+			key: 'og:description',
+			property: 'og:description',
+			content: computed(() => currentStuff.value?.shortDescription || 'Stuff'),
+		},
+		{
+			key: 'og:image',
+			property: 'og:image',
+			content: computed(
+				() =>
+					currentStuff.value?.img ||
+					'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100'
+			),
+		},
+		{
+			key: 'og:url',
+			property: 'og:url',
+			content: computed(() => `https://dasturchioka.uz/stuff/${route.params.id}`),
+		},
+	],
 })
 </script>
 
@@ -59,7 +97,7 @@ const currentStuff = computed(() => {
 								: badge.name === 'postgresql'
 								? 'bg-indigo-500'
 								: badge.name === 'javascript'
-									? 'bg-yellow-500'
+								? 'bg-yellow-500'
 								: '',
 						]"
 						class="rounded px-1 text-sm font-semibold"

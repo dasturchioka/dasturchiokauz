@@ -1,13 +1,24 @@
 <script lang="ts" setup>
-import NovdaQuizCard from '@/assets/img/novda-quiz-card.png'
-import { useStuffStore } from '#imports'
-
 const stuffStore = useStuffStore()
 
 const { stuff } = storeToRefs(stuffStore)
 
 useHead({
 	title: 'Dasturchioka | Stuff',
+	meta: [
+		{ charset: 'utf-8' },
+		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+		{ key: 'description', name: 'description', content: 'My Stuff' },
+		{ key: 'og:title', property: 'og:title', content: 'Dasturchioka | Stuff' },
+		{ key: 'og:description', property: 'og:description', content: 'My Stuff' },
+		{
+			key: 'og:image',
+			property: 'og:image',
+			content:
+				'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100',
+		},
+		{ key: 'og:url', property: 'og:url', content: 'https://dasturchioka.uz/stuff' },
+	],
 })
 </script>
 
