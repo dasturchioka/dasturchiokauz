@@ -41,7 +41,7 @@ useHead({
 			<div class="img">
 				<NuxtImg
 					class="w-full h-full rounded-2xl object-cover"
-					src="/images/profile2.png"
+					src="/images/profile4.jpg"
 					alt="Sardor Aminov, dasturchioka"
 				/>
 			</div>
