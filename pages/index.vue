@@ -33,6 +33,7 @@ useHead({
 		<div class="images h-auto">
 			<div class="img">
 				<NuxtImg
+					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile1.jpg"
 					alt="Sardor Aminov, dasturchioka"
@@ -40,6 +41,7 @@ useHead({
 			</div>
 			<div class="img">
 				<NuxtImg
+					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile3.jpg"
 					alt="Sardor Aminov, dasturchioka"
@@ -47,6 +49,7 @@ useHead({
 			</div>
 			<div class="img">
 				<NuxtImg
+					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile4.jpg"
 					alt="Sardor Aminov, dasturchioka"
