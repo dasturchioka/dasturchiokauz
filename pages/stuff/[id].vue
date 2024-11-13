@@ -133,6 +133,9 @@ useHead({
 								target="_blank"
 								>{{ link.label }}</a
 							>
+							<div v-if="!currentStuff.demoLinks" class="italic text-sm">
+								The project is still on development!
+							</div>
 						</div>
 					</div>
 					<div class="source">
