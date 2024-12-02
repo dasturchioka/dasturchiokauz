@@ -68,7 +68,7 @@ useHead({
 				</div>
 			</div>
 			<div class="middle">
-				<p class="font-mont text-3xl">I build stuff.</p>
+				<p class="font-mont text-3xl">I build stuff, and teach programming.</p>
 				<div class="social-media flex items-center space-x-4 mt-8">
 					<TelegramIcon />
 					<LinkedinLogo />
