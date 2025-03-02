@@ -9,22 +9,32 @@
 		"postinstall": "nuxt prepare"
 	},
 	"devDependencies": {
-		"@nuxt/devtools": "latest",
-		"@nuxt/types": "^2.17.3",
+		"@nuxt/devtools": "^2.1.1",
+		"@nuxt/types": "^2.18.1",
 		"@nuxt/typescript-build": "^3.0.2",
-		"@pinia/nuxt": "^0.5.5",
+		"@nuxtjs/robots": "^5.2.4",
+		"@pinia/nuxt": "^0.10.1",
+		"@types/prismjs": "^1.26.5",
+		"@vueuse/nuxt": "^12.7.0",
 		"autoprefixer": "^10.4.15",
-		"nuxt": "^3.10.2",
+		"nuxt": "^3.15.4",
+		"nuxt-shiki": "^0.3.0",
 		"postcss": "^8.4.29",
 		"tailwindcss": "^3.3.3",
-		"typescript": "^5.3.3"
+		"typescript": "^5.8.2",
+		"vue3-notion": "^0.1.46"
 	},
 	"dependencies": {
-		"@nuxt/image": "^1.0.0-rc.1",
-		"pinia": "^2.2.4",
-		"vue3-marquee": "^4.0.0"
-	},
-	"overrides": {
+		"@notionhq/client": "^2.2.16",
+		"@nuxt/image": "^1.9.0",
+		"@nuxt/kit": "^3.15.4",
+		"@nuxt/schema": "^3.15.4",
+		"@nuxtjs/eslint-config-typescript": "^12.1.0",
+		"caniuse-lite": "^1.0.30001701",
+		"pinia": "^3.0.1",
+		"prismjs": "^1.29.0",
+		"vue3-marquee": "^4.2.2",
 		"vue": "latest"
 	}
+
 }

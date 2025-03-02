@@ -1,29 +1,42 @@
 <script setup lang="ts">
-const quotes = [
-	'passion for programming',
-	'the more calm he is, the more strength he has',
-	'intelligence is the sexiest thing humanity ever has',
-	'Hurry up and live',
-	'The best answer to anger is silence',
-	"Don't care",
-	'Man conquers the world by conquering himself',
-]
+// Disable automatic URL changes on page load
+const router = useRouter()
+onMounted(() => {
+	// This prevents any automatic navigation from happening
+	router.options.scrollBehavior = (to: any, from: any, savedPosition: any) => {
+		// Return saved position if available
+		if (savedPosition) {
+			return savedPosition
+		}
+		// Don't change scroll position on same-page navigation
+		if (to.path === from.path) {
+			return false
+		}
+		// Otherwise, scroll to top
+		return { top: 0 }
+	}
+})
 </script>
 
 <template>
 	<div
 		class="layout h-[100dvh] overflow-hidden bg-[#090909] flex flex-col items-center justify-between pb-6"
 	>
-		<Vue3Marquee class="scroll-none bg-[#151515] text-white enter-transition-layout">
-			<div
-				class="uppercase font-poppins font-medium tracking-wide flex items-center"
-				v-for="(quote, index) in quotes"
-				:key="index"
-			>
-				<p class="mx-4">•</p>
-				<p>{{ quote }}</p>
+		<div class="scroll-none bg-[#151515] w-full text-white enter-transition-layout">
+			<NuxtLoadingIndicator color="#42b883" />
+			<div class="flex justify-center items-center p-1 text-white font-mono text-xs">
+				<div class="text-center">
+					{{
+						new Date(`${new Date().getFullYear()}-03-07`).getTime() - Date.now() > 0
+							? Math.floor(
+									(new Date(`${new Date().getFullYear()}-03-07`).getTime() - Date.now()) /
+										(1000 * 60 * 60 * 24)
+							  ) + ' days until my birthday'
+							: "It's my birthday 🎂"
+					}}
+				</div>
 			</div>
-		</Vue3Marquee>
+		</div>
 		<NuxtPage
 			class="enter-transition-layout scroll-none container mx-auto sm:px-4 px-2 overflow-x-hidden max-h-full overflow-y-scroll"
 		></NuxtPage>
@@ -31,8 +44,9 @@ const quotes = [
 			class="nav-links enter-transition-layout flex items-center space-x-4 font-mono sm:text-lg text-base"
 		>
 			<NuxtLink class="default-link" to="/">Home</NuxtLink>
-			<NuxtLink to="/stuff" class="default-link transition-all hover:text-white flex items-start"
-				>Stuff <span class="bg-green-500 px-1 rounded text-xs ml-1">new</span></NuxtLink
+			<NuxtLink to="/stuff" class="default-link">Stuff </NuxtLink>
+			<NuxtLink to="/blog" class="default-link transition-all hover:text-white flex items-start"
+				>Blog <span class="bg-[#00a6fb] px-1 rounded text-xs ml-1">new</span></NuxtLink
 			>
 		</nav>
 	</div>
@@ -51,11 +65,6 @@ a.router-link-exact-active {
 
 .scroll-none::-webkit-scrollbar {
 	display: none;
-}
-
-*,
-* * {
-	user-select: none;
 }
 
 .page-enter-active,
@@ -87,5 +96,6 @@ a.router-link-exact-active {
 
 a {
 	-webkit-tap-highlight-color: transparent;
+	font-weight: normal;
 }
 </style>

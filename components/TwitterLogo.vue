@@ -1,5 +1,5 @@
 <template>
-  <a href="https://twitter.com/dasturchioka" target="_blank"> 
+  <NuxtLink href="https://twitter.com/dasturchioka" target="_blank">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="29"
@@ -12,7 +12,7 @@
         fill="#353535"
       />
     </svg>
-  </a>
+  </NuxtLink>
 </template>
 
 <style scoped>

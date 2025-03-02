@@ -15,7 +15,17 @@ useHead({
 	title() {
 		return currentStuff.value?.title || 'Stuff'
 	},
+	link: [
+		{
+			rel: 'canonical',
+			href() {
+				return `https://dasturchioka.uz/stuff/${route.params.id}`
+			},
+		},
+	],
+
 	meta: [
+		{ name: 'robots', content: 'index, follow' },
 		{ charset: 'utf-8' },
 		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 		{
@@ -49,6 +59,21 @@ useHead({
 		},
 	],
 })
+useSeoMeta({
+	title: computed(() => currentStuff.value?.title || 'Stuff'),
+	description: computed(() => currentStuff.value?.shortDescription || 'Stuff'),
+	ogTitle: computed(() => currentStuff.value?.title || 'Stuff'),
+	ogDescription: computed(() => currentStuff.value?.shortDescription || 'Stuff'),
+	ogImage: computed(
+		() =>
+			currentStuff.value?.img ||
+			'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100'
+	),
+	ogUrl: computed(() => `https://dasturchioka.uz/stuff/${route.params.id}`),
+	author: 'Sardor Aminov, Dasturchioka',
+	robots: 'index, follow',
+	charset: 'utf-8',
+})
 </script>
 
 <template>
@@ -75,7 +100,7 @@ useHead({
 		</button>
 		<div v-if="currentStuff" class="stuff w-full">
 			<div class="img md:h-[400px] sm:h-[200px] h-[100px] rounded-3xl overflow-hidden w-full">
-				<img class="w-full h-full object-cover" :src="currentStuff.img" alt="Novda quiz" />
+				<NuxtImg class="w-full h-full object-cover" :src="currentStuff.img" alt="Novda quiz" />
 			</div>
 			<div class="main">
 				<div class="titles my-4">
@@ -125,13 +150,13 @@ useHead({
 							Try yourself
 						</p>
 						<div class="links flex sm:gap-4 gap-2">
-							<a
+							<NuxtLink
 								v-for="link in currentStuff.demoLinks"
 								:key="link.href"
 								:href="link.href"
 								class="underline text-wrap"
 								target="_blank"
-								>{{ link.label }}</a
+								>{{ link.label }}</NuxtLink
 							>
 							<div v-if="!currentStuff.demoLinks" class="italic text-sm">
 								The project is still on development!
@@ -160,13 +185,13 @@ useHead({
 							See codebase
 						</p>
 						<div class="links flex sm:gap-4 gap-2">
-							<a
+							<NuxtLink
 								v-for="link in currentStuff.sourceCodeLinks"
 								:key="link.href"
 								:href="link.href"
 								class="underline"
 								target="_blank"
-								>{{ link.label }}</a
+								>{{ link.label }}</NuxtLink
 							>
 						</div>
 					</div>

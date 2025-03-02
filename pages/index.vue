@@ -2,20 +2,21 @@
 useHead({
 	title: 'Dasturchioka | Sardor Aminov',
 	meta: [
+		{ name: 'robots', content: 'index, follow' },
 		{ charset: 'utf-8' },
 		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 		{
 			key: 'description',
 			name: 'description',
 			content:
-				'Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff.',
+				'Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff and teach people how to build',
 		},
 		{ key: 'og:title', property: 'og:title', content: 'Dasturchioka | Sardor Aminov' },
 		{
 			key: 'og:description',
 			property: 'og:description',
 			content:
-				'Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff.',
+				'Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff and teach people how to build.',
 		},
 		{
 			key: 'og:image',
@@ -32,7 +33,7 @@ useHead({
 	<div class="home-page container mx-auto sm:px-4 px-2 text-white">
 		<div class="images h-auto">
 			<div class="img">
-				<NuxtImg
+				<LazyNuxtImg
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile1.jpg"
@@ -40,7 +41,7 @@ useHead({
 				/>
 			</div>
 			<div class="img">
-				<NuxtImg
+				<LazyNuxtImg
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile3.jpg"
@@ -48,7 +49,7 @@ useHead({
 				/>
 			</div>
 			<div class="img">
-				<NuxtImg
+				<LazyNuxtImg
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile4.jpg"
@@ -64,7 +65,12 @@ useHead({
 				<div
 					class="badge rounded-full sm:px-4 sm:py-2 px-2 font-mont text-lg border border-white w-auto"
 				>
-					18 y.o, Uzbek
+					{{
+						Math.floor(
+							(new Date().getTime() - new Date('2006-03-07').getTime()) /
+								(1000 * 60 * 60 * 24 * 365.25)
+						) + ' y.o'
+					}}, Uzbek
 				</div>
 			</div>
 			<div class="middle">
@@ -76,12 +82,12 @@ useHead({
 					<TwitterLogo />
 					<YTLogo />
 				</div>
-				<a
+				<NuxtLink
 					href="https://tirikchilik.uz/dasturchioka"
 					target="_blank"
 					class="font-mont md:text-xl my-6 text-white transition-all hover:underline flex items-center w-full justify-start donation-text"
-					><LinkIcon class="mr-2 w-[18px]" />Yo, you got my money on your wallet, give it up now!
-				</a>
+					><LinkIcon class="mr-2 w-[18px]" /> For birthday gifts!
+				</NuxtLink>
 			</div>
 		</div>
 	</div>
