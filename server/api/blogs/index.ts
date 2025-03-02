@@ -26,6 +26,6 @@ export default defineEventHandler(async () => {
 		return blogs
 	} catch (error) {
 		console.error('❌ Notion API Error:', error)
-		return { error: 'Failed to fetch blog posts' }
+		return error
 	}
 })
