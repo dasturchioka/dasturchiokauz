@@ -21,8 +21,7 @@ useHead({
 		{
 			key: 'og:image',
 			property: 'og:image',
-			content:
-				'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100',
+			content: '/images/profile4.jpg',
 		},
 		{ key: 'og:url', property: 'og:url', content: 'https://dasturchioka.uz' },
 	],

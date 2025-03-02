@@ -43,8 +43,7 @@ useHead({
 				'@type': 'BlogPosting',
 				headline: 'Dasturchioka | Blog',
 				description: 'My Blog',
-				image:
-					'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100',
+				image: '/images/profile4.jpg',
 				url: 'https://dasturchioka.uz/blog',
 			}),
 		},
@@ -59,8 +58,7 @@ useHead({
 		{
 			key: 'og:image',
 			property: 'og:image',
-			content:
-				'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100',
+			content: '/images/profile4.jpg',
 		},
 		{ key: 'og:url', property: 'og:url', content: 'https://dasturchioka.uz/blog' },
 	],
@@ -70,7 +68,7 @@ useSeoMeta({
 	description: "Dasturchioka's blog",
 	ogTitle: 'Dasturchioka | blog',
 	ogDescription: "Dasturchioka's blog",
-	ogImage: 'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100',
+	ogImage: '/images/profile4.jpg',
 	ogUrl: 'https://dasturchioka.uz/blog',
 	author: 'Sardor Aminov, Dasturchioka',
 	robots: 'index, follow',

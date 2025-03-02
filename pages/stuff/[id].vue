@@ -49,7 +49,7 @@ useHead({
 			content: computed(
 				() =>
 					currentStuff.value?.img ||
-					'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100'
+					'/images/profile4.jpg'
 			),
 		},
 		{

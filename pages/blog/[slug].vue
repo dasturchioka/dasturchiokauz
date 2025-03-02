@@ -54,7 +54,7 @@ useHead({
 			key: 'og:image',
 			property: 'og:image',
 			content: computed(
-				() => 'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100'
+				() => '/images/profile4.jpg'
 			),
 		},
 		{
@@ -71,7 +71,7 @@ useSeoMeta({
 	ogTitle: computed(() => data.value.title || 'Blog'),
 	ogDescription: computed(() => data.value.description || 'Blog'),
 	ogImage: computed(
-		() => 'https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100'
+		() => '/images/profile4.jpg'
 	),
 	ogUrl: computed(() => `https://dasturchioka.uz/blog/${slug}`),
 	author: 'Sardor Aminov, Dasturchioka',
