@@ -26,7 +26,7 @@ onMounted(() => {
 		class="layout h-[100dvh] overflow-hidden bg-[#090909] flex flex-col items-center justify-between pb-6"
 	>
 		<div class="scroll-none bg-[#151515] w-full text-white enter-transition-layout">
-			<NuxtLoadingIndicator color="#42b883" />
+			<NuxtLoadingIndicator color="#00a6fb" />
 			<div class="flex justify-center items-center p-1 text-white font-mono text-xs">
 				<div class="text-center">
 					{{
