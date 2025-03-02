@@ -30,11 +30,12 @@
 		"@nuxt/kit": "^3.15.4",
 		"@nuxt/schema": "^3.15.4",
 		"@nuxtjs/eslint-config-typescript": "^12.1.0",
+		"@vercel/analytics": "^1.5.0",
+		"@vercel/speed-insights": "^1.2.0",
 		"caniuse-lite": "^1.0.30001701",
 		"pinia": "^3.0.1",
 		"prismjs": "^1.29.0",
-		"vue3-marquee": "^4.2.2",
-		"vue": "latest"
+		"vue": "latest",
+		"vue3-marquee": "^4.2.2"
 	}
-
 }

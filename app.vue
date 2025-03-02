@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt'
+import { SpeedInsights } from '@vercel/speed-insights/nuxt'
+
 // Disable automatic URL changes on page load
 const router = useRouter()
 onMounted(() => {
@@ -49,6 +52,8 @@ onMounted(() => {
 				>Blog <span class="bg-[#00a6fb] px-1 rounded text-xs ml-1">new</span></NuxtLink
 			>
 		</nav>
+		<SpeedInsights />
+		<Analytics />
 	</div>
 </template>
 
