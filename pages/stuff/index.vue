@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+definePageMeta({
+	layout: 'default',
+})
 const stuffStore = useStuffStore()
 
 const { stuff } = storeToRefs(stuffStore)
@@ -21,8 +24,7 @@ useHead({
 				'@type': 'BlogPosting',
 				headline: 'Dasturchioka | Stuff',
 				description: 'My Stuff',
-				image:
-					'/images/profile4.jpg',
+				image: '/images/profile4.jpg',
 				url: 'https://dasturchioka.uz/stuff',
 			}),
 		},
@@ -37,8 +39,7 @@ useHead({
 		{
 			key: 'og:image',
 			property: 'og:image',
-			content:
-				'/images/profile4.jpg',
+			content: '/images/profile4.jpg',
 		},
 		{ key: 'og:url', property: 'og:url', content: 'https://dasturchioka.uz/stuff' },
 	],

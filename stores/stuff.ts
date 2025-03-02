@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-import NovdaQuizCard from '@/assets/img/novda-quiz-card.png'
-import TeleSdkJs from '@/assets/img/tele-sdk-js-card.png'
-import ChizzaroCard from '@/assets/img/chizzaro-card.jpg'
+import NovdaQuizCard from '/images/novda-quiz-card.png'
+import TeleSdkJs from '/images/tele-sdk-js-card.png'
+import ChizzaroCard from '/images/chizzaro-card.jpg'
 
 export const useStuffStore = defineStore('stuff-store', () => {
 	const stuff = ref([

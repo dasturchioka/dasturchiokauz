@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { Suspense } from 'vue'
 import NotionRenderer from '../../components/Renderer/NotionRenderer.vue'
 
 const colorMap: Record<string, string> = {
@@ -14,6 +15,14 @@ const colorMap: Record<string, string> = {
 	red: 'bg-red-500 text-white',
 }
 
+definePageMeta({
+	layout: 'default',
+})
+
+defineOptions({
+	inheritAttrs: false,
+})
+
 const { params } = useRoute()
 const { slug } = params
 
@@ -21,7 +30,7 @@ const { data } = await useFetch<any>(`/api/blogs/${slug}`)
 
 useHead({
 	title() {
-		return data.value.title || 'Blog'
+		return data?.value?.title || 'Blog'
 	},
 	link: [
 		{
@@ -38,24 +47,22 @@ useHead({
 		{
 			key: 'description',
 			name: 'description',
-			content: computed(() => data.value.description || 'Blog'),
+			content: computed(() => data?.value?.description || 'Blog'),
 		},
 		{
 			key: 'og:title',
 			property: 'og:title',
-			content: computed(() => data.value.title || 'Blog'),
+			content: computed(() => data?.value?.title || 'Blog'),
 		},
 		{
 			key: 'og:description',
 			property: 'og:description',
-			content: computed(() => data.value.description || 'Blog'),
+			content: computed(() => data?.value?.description || 'Blog'),
 		},
 		{
 			key: 'og:image',
 			property: 'og:image',
-			content: computed(
-				() => '/images/profile4.jpg'
-			),
+			content: computed(() => '/images/profile4.jpg'),
 		},
 		{
 			key: 'og:url',
@@ -66,13 +73,11 @@ useHead({
 })
 
 useSeoMeta({
-	title: computed(() => data.value.title || 'Blog'),
-	description: computed(() => data.value.description || 'Blog'),
-	ogTitle: computed(() => data.value.title || 'Blog'),
-	ogDescription: computed(() => data.value.description || 'Blog'),
-	ogImage: computed(
-		() => '/images/profile4.jpg'
-	),
+	title: computed(() => data?.value?.title || 'Blog'),
+	description: computed(() => data?.value?.description || 'Blog'),
+	ogTitle: computed(() => data?.value?.title || 'Blog'),
+	ogDescription: computed(() => data?.value?.description || 'Blog'),
+	ogImage: computed(() => '/images/profile4.jpg'),
 	ogUrl: computed(() => `https://dasturchioka.uz/blog/${slug}`),
 	author: 'Sardor Aminov, Dasturchioka',
 	robots: 'index, follow',
@@ -81,18 +86,19 @@ useSeoMeta({
 </script>
 
 <template>
-	<div class="text-white sm:w-[800px] mx-auto">
+	<div class="text-white sm:w-[800px] w-full sm:px-4 px-2 mx-auto">
 		<header class="header mb-4">
 			<h1 class="sm:text-5xl text-2xl sm:mt-8 transition-all font-bold font-mont w-full">
-				{{ data.title }}
+				{{ data?.title }}
 			</h1>
 			<div class="credentials mt-2 font-normal">
-				<p class="sm:text-xl text-lg">{{ data.dateFormatted }}</p>
+				<p class="sm:text-xl text-lg">{{ data?.dateFormatted }}</p>
 			</div>
-			<p class="description mt-6 font-normal">{{ data.description }}</p>
+			<p class="description mt-6 font-normal">{{ data?.description }}</p>
 			<div class="tags flex font-mono flex-wrap text-sm gap-4 mt-4 pb-8">
 				<p
-					v-for="tag in data.tags.multi_select"
+					v-for="tag in data?.tags?.multi_select"
+					:key="tag.id"
 					:class="[colorMap[tag.color] || 'bg-gray-500 text-white']"
 					class="px-1 rounded font-bold"
 				>
@@ -101,6 +107,6 @@ useSeoMeta({
 			</div>
 			<hr />
 		</header>
-		<NotionRenderer :blocks="data.blocks" />
+		<NotionRenderer :blocks="data?.blocks" />
 	</div>
 </template>

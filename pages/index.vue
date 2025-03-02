@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'default'
+})
 useHead({
 	title: 'Dasturchioka | Sardor Aminov',
 	meta: [

@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+definePageMeta({
+	layout: 'default',
+})
 export interface NotionBlogPost {
 	id: string
 	title: string

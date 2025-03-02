@@ -11,6 +11,10 @@ const currentStuff = computed(() => {
 	return stuff.value.find(s => s.id === route.params.id)
 })
 
+definePageMeta({
+	layout: 'default',
+})
+
 useHead({
 	title() {
 		return currentStuff.value?.title || 'Stuff'
@@ -46,11 +50,7 @@ useHead({
 		{
 			key: 'og:image',
 			property: 'og:image',
-			content: computed(
-				() =>
-					currentStuff.value?.img ||
-					'/images/profile4.jpg'
-			),
+			content: computed(() => currentStuff.value?.img || '/images/profile4.jpg'),
 		},
 		{
 			key: 'og:url',
