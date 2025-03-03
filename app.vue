@@ -42,10 +42,11 @@ onMounted(() => {
 				</div>
 			</div>
 			<NuxtPage
-				class="enter-transition-layout scroll-none container mx-auto sm:px-4 px-2 overflow-x-hidden max-h-full overflow-y-scroll"
+				class="enter-transition-layout scroll-none container mx-auto sm:px-4 px-2 overflow-x-hidden max-h-full overflow-y-scroll pb-12"
 			></NuxtPage>
+			<div class="free-space"></div>
 			<nav
-				class="nav-links enter-transition-layout flex items-center space-x-4 font-mono sm:text-lg text-base"
+				class="nav-links enter-transition-layout flex items-center justify-center space-x-4 font-mono sm:text-lg text-base fixed bottom-0 bg-[#090909] w-full py-4"
 			>
 				<NuxtLink class="default-link" to="/">Home</NuxtLink>
 				<NuxtLink to="/stuff" class="default-link">Stuff </NuxtLink>

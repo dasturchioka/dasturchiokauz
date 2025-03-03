@@ -61,7 +61,7 @@ a {
 }
 *::-webkit-scrollbar-track {
 	border-radius: 20px;
-	background-color: #000000;
+	background-color: transparent;
 }
 
 *::-webkit-scrollbar-track:hover {

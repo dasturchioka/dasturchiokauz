@@ -86,9 +86,9 @@ useSeoMeta({
 </script>
 
 <template>
-	<div class="text-white sm:w-[800px] w-full sm:px-4 px-2 mx-auto">
+	<div class="text-white sm:w-[800px] w-full sm:px-4 px-2 mx-auto pb-12">
 		<header class="header mb-4">
-			<h1 class="sm:text-5xl text-2xl sm:mt-8 transition-all font-bold font-mont w-full">
+			<h1 class="sm:text-5xl text-4xl sm:mt-8 mt-7 transition-all font-bold font-mont w-full">
 				{{ data?.title }}
 			</h1>
 			<div class="credentials mt-2 font-normal">
