@@ -1,28 +1,43 @@
 <template>
-	<div class="notion-renderer">
-		<template v-for="(block, index) in blocks" :key="index">
-			<component :is="getComponentForBlock(block)" :block="block" />
+	<Suspense>
+		<template #default>
+			<div class="notion-renderer">
+				<template v-for="(block, index) in blocks" :key="index">
+					<Suspense>
+						<template #default>
+							<component :is="getComponentForBlock(block)" :block="block" />
+						</template>
+						<template #fallback>
+							<p class="text-white">Loading block...</p>
+						</template>
+					</Suspense>
+				</template>
+			</div>
 		</template>
-	</div>
+		<template #fallback>
+			<p class="text-white">Loading content...</p>
+		</template>
+	</Suspense>
 </template>
 
 <script setup lang="ts">
-import { type PropType } from 'vue'
-import NotionParagraph from './NotionParagraph.vue'
-import NotionHeading from './NotionHeading.vue'
-import NotionCode from './NotionCode.vue'
-import NotionImage from './NotionImage.vue'
-import NotionBulletedList from './NotionBulletList.vue'
-import NotionToDo from './NotionTodo.vue'
-import NotionNumberedList from './NotionNumberedList.vue'
-import NotionToggle from './NotionToggle.vue'
-import NotionQuote from './NotionQuote.vue'
-import NotionCallout from './NotionCallout.vue'
-import NotionDivider from './NotionDivider.vue'
-import NotionBookmark from './NotionBookmark.vue'
-import NotionTable from './NotionTable.vue'
+import { type PropType, defineAsyncComponent } from 'vue'
 
-// Define TypeScript interfaces for Notion blocks
+// Dynamically import components
+const NotionParagraph = defineAsyncComponent(() => import('./NotionParagraph.vue'))
+const NotionHeading = defineAsyncComponent(() => import('./NotionHeading.vue'))
+const NotionCode = defineAsyncComponent(() => import('./NotionCode.vue'))
+const NotionImage = defineAsyncComponent(() => import('./NotionImage.vue'))
+const NotionBulletedList = defineAsyncComponent(() => import('./NotionBulletList.vue'))
+const NotionToDo = defineAsyncComponent(() => import('./NotionTodo.vue'))
+const NotionNumberedList = defineAsyncComponent(() => import('./NotionNumberedList.vue'))
+const NotionToggle = defineAsyncComponent(() => import('./NotionToggle.vue'))
+const NotionQuote = defineAsyncComponent(() => import('./NotionQuote.vue'))
+const NotionCallout = defineAsyncComponent(() => import('./NotionCallout.vue'))
+const NotionDivider = defineAsyncComponent(() => import('./NotionDivider.vue'))
+const NotionBookmark = defineAsyncComponent(() => import('./NotionBookmark.vue'))
+const NotionTable = defineAsyncComponent(() => import('./NotionTable.vue'))
+
 export interface NotionBlock {
 	id: string
 	type: string

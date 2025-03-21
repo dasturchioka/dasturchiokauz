@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300;400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,8 +7,6 @@
 	font-family: Chaviera;
 	src: url('../fonts/Chaviera.otf') format('opentype');
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300;400;500&display=swap');
 
 a.router-link-active,
 a.router-link-exact-active {
@@ -55,26 +54,27 @@ a {
 	font-weight: normal;
 }
 
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
 	height: 5px;
-	width: 5px;
-}
-*::-webkit-scrollbar-track {
+	width: 3px;
+	display: none;
+} */
+/* *::-webkit-scrollbar-track {
 	border-radius: 20px;
 	background-color: transparent;
 }
 
 *::-webkit-scrollbar-track:hover {
-	background-color: #272727;
+	background-color: #090909;
 }
 
 *::-webkit-scrollbar-track:active {
-	background-color: #272727;
+	background-color: #090909;
 }
 
 *::-webkit-scrollbar-thumb {
 	border-radius: 0px;
-	background-color: #ffffff;
+	background-color: #ffffff13;
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -83,4 +83,18 @@ a {
 
 *::-webkit-scrollbar-thumb:active {
 	background-color: #ffffff;
+} */
+
+*::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+	scrollbar-width: none;
+}
+
+/* Hide scrollbar for Internet Explorer and Edge */
+* {
+	-ms-overflow-style: none;
 }

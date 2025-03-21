@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: 'default'
+	layout: 'default',
 })
 useHead({
 	title: 'Dasturchioka | Sardor Aminov',
@@ -76,7 +76,7 @@ useHead({
 				</div>
 			</div>
 			<div class="middle">
-				<p class="font-mont text-3xl">I build stuff, and teach programming.</p>
+				<p class="font-mont text-3xl">mentor & fullstack web dev. high-skilled bug creator</p>
 				<div class="social-media flex items-center space-x-4 mt-8">
 					<TelegramIcon />
 					<LinkedinLogo />
@@ -84,12 +84,6 @@ useHead({
 					<TwitterLogo />
 					<YTLogo />
 				</div>
-				<NuxtLink
-					href="https://tirikchilik.uz/dasturchioka"
-					target="_blank"
-					class="font-mont md:text-xl my-6 text-white transition-all hover:underline flex items-center w-full justify-start donation-text"
-					><LinkIcon class="mr-2 w-[18px]" /> For birthday gifts!
-				</NuxtLink>
 			</div>
 		</div>
 	</div>
@@ -104,7 +98,7 @@ useHead({
 }
 
 .images .img {
-	height: 190px;
+	height: 220px;
 }
 
 @media (max-width: 768px) {

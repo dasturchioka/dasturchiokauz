@@ -18,6 +18,7 @@
 		"@vueuse/nuxt": "^12.7.0",
 		"autoprefixer": "^10.4.15",
 		"nuxt": "^3.15.4",
+		"nuxt-marquee": "1.0.4",
 		"nuxt-shiki": "^0.3.0",
 		"postcss": "^8.4.29",
 		"tailwindcss": "^3.3.3",

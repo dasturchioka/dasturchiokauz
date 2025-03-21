@@ -11,7 +11,14 @@ export default defineNuxtConfig({
 	},
 
 	ssr: true,
-	modules: ['@nuxt/image', '@pinia/nuxt', 'nuxt-shiki', '@vueuse/nuxt', '@nuxtjs/robots'],
+	modules: [
+		'@nuxt/image',
+		'@pinia/nuxt',
+		'nuxt-shiki',
+		'@vueuse/nuxt',
+		'@nuxtjs/robots',
+		'nuxt-marquee',
+	],
 	shiki: {
 		defaultTheme: 'github-dark-default',
 	},
@@ -29,6 +36,13 @@ export default defineNuxtConfig({
 			htmlAttrs: {
 				lang: 'en',
 			},
+			link: [
+				{
+					rel: 'stylesheet',
+					type: 'text/css',
+					href: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css',
+				},
+			],
 		},
 	},
 
