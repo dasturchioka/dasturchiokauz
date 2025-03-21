@@ -26,7 +26,7 @@ defineOptions({
 const { params } = useRoute()
 const { slug } = params
 
-const { data } = await useFetch<any>(`/api/blogs/${slug}`)
+const { data } = await useFetch<any>(`/api/blogs/${slug}`, { cache: 'force-cache' })
 
 useHead({
 	title() {

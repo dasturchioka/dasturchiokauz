@@ -26,7 +26,9 @@ const colorMap: Record<string, string> = {
 	red: 'bg-red-500 text-white',
 }
 
-const { data } = await useFetch<NotionBlogPost[]>('/api/blogs')
+const { data } = await useAsyncData('/api/blogs', () =>
+	$fetch<NotionBlogPost[]>('/api/blogs', { cache: 'force-cache' })
+)
 
 useHead({
 	title: 'Dasturchioka | Blog',
@@ -77,6 +79,8 @@ useSeoMeta({
 	robots: 'index, follow',
 	charset: 'utf-8',
 })
+
+const getTags = (tags: any) => tags?.multi_select || []
 </script>
 
 <template>
@@ -101,7 +105,7 @@ useSeoMeta({
 						<p class="description mt-6 font-normal">{{ post.description }}</p>
 						<div class="tags flex font-mono flex-wrap text-sm gap-4 mt-4">
 							<p
-								v-for="tag in post.tags.multi_select"
+								v-for="tag in getTags(post.tags)"
 								:class="[colorMap[tag.color] || 'bg-gray-500 text-white']"
 								class="px-1 rounded font-bold"
 							>
