@@ -27,7 +27,7 @@ const colorMap: Record<string, string> = {
 }
 
 const { data } = await useAsyncData('/api/blogs', () =>
-	$fetch<NotionBlogPost[]>('/api/blogs', { cache: 'force-cache' })
+	$fetch<NotionBlogPost[]>('/api/blogs')
 )
 
 useHead({
