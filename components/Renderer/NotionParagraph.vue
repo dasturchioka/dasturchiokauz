@@ -1,5 +1,5 @@
 <template>
-	<p class="notion-paragraph">
+	<p class="notion-paragraph my-4">
 		<template v-for="(richText, i) in block.paragraph.rich_text" :key="i">
 			<span :class="getTextClasses(richText)">{{ richText.plain_text }}</span>
 		</template>
