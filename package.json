@@ -26,6 +26,7 @@
 		"vue3-notion": "^0.1.46"
 	},
 	"dependencies": {
+		"@artmizu/yandex-metrika-nuxt": "^1.1.0",
 		"@notionhq/client": "^2.2.16",
 		"@nuxt/image": "^1.9.0",
 		"@nuxt/kit": "^3.15.4",
