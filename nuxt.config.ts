@@ -18,6 +18,7 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'@nuxtjs/robots',
 		'nuxt-marquee',
+		'@artmizu/yandex-metrika-nuxt',
 	],
 	shiki: {
 		defaultTheme: 'github-dark-default',
