@@ -42,22 +42,6 @@ useHead({
 					alt="Sardor Aminov, dasturchioka founder novdaunion"
 				/>
 			</div>
-			<div class="img">
-				<LazyNuxtImg
-					loading="lazy"
-					class="w-full h-full rounded-2xl object-cover"
-					src="/images/profile2.jpg"
-					alt="Sardor Aminov, dasturchioka founder novdaunion"
-				/>
-			</div>
-			<div class="img">
-				<LazyNuxtImg
-					loading="lazy"
-					class="w-full h-full rounded-2xl object-cover"
-					src="/images/profile3.jpg"
-					alt="Sardor Aminov, dasturchioka, founder novdaunion"
-				/>
-			</div>
 		</div>
 		<div class="text-container flex flex-col items-start space-y-2">
 			<div class="top flex flex-col items-start my-4">
