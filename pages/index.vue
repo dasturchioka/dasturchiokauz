@@ -39,7 +39,7 @@ useHead({
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile1.jpg"
-					alt="Sardor Aminov, dasturchioka"
+					alt="Sardor Aminov, dasturchioka founder novdaunion"
 				/>
 			</div>
 			<div class="img">
@@ -47,7 +47,7 @@ useHead({
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile2.jpg"
-					alt="Sardor Aminov, dasturchioka"
+					alt="Sardor Aminov, dasturchioka founder novdaunion"
 				/>
 			</div>
 			<div class="img">
@@ -55,7 +55,7 @@ useHead({
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
 					src="/images/profile3.jpg"
-					alt="Sardor Aminov, dasturchioka"
+					alt="Sardor Aminov, dasturchioka, founder novdaunion"
 				/>
 			</div>
 		</div>
