@@ -46,7 +46,7 @@ useHead({
 				<LazyNuxtImg
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
-					src="/images/profile3.jpg"
+					src="/images/profile2.jpg"
 					alt="Sardor Aminov, dasturchioka"
 				/>
 			</div>
@@ -54,7 +54,7 @@ useHead({
 				<LazyNuxtImg
 					loading="lazy"
 					class="w-full h-full rounded-2xl object-cover"
-					src="/images/profile4.jpg"
+					src="/images/profile3.jpg"
 					alt="Sardor Aminov, dasturchioka"
 				/>
 			</div>
@@ -76,7 +76,13 @@ useHead({
 				</div>
 			</div>
 			<div class="middle">
-				<p class="font-mont text-3xl">mentor & fullstack web dev. high-skilled bug creator</p>
+				<p class="font-mont text-3xl">mentor & fullstack web dev.</p>
+				<p class="font-mont text-3xl ">
+					founder of
+					<a target="_blank" class="transition hover:opacity-50" href="https://novdaunion.uz"
+						><span class="text-blue-500 ml-2">@</span>novdaunion.</a
+					>
+				</p>
 				<div class="social-media flex items-center space-x-4 mt-8">
 					<TelegramIcon />
 					<LinkedinLogo />

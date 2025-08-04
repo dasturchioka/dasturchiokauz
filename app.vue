@@ -39,9 +39,9 @@ onMounted(() => {
 				>
 					<NuxtLink class="default-link" to="/">Home</NuxtLink>
 					<NuxtLink to="/about" class="default-link">About </NuxtLink>
-					<NuxtLink to="/blog" class="default-link transition-all hover:text-white flex items-start"
+					<!-- <NuxtLink to="/blog" class="default-link transition-all hover:text-white flex items-start"
 						>Blog <span class="bg-[#00a6fb] px-1 rounded text-xs ml-1">new</span></NuxtLink
-					>
+					> -->
 				</nav>
 				<SpeedInsights />
 				<Analytics />

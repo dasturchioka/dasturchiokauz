@@ -89,8 +89,8 @@ I use  Arch Linux, btw
 				</p>
 				<p>
 					Born in 2006, Khorezm, Uzbekistan. My parents saw an earlier self development compared to
-					my peers, so they took me to school at the age of 6. I have already knew reading, writing
-					and do some basic arithmetic at the age of 5.
+					my peers, so they took me to school at the age of 6. I had already known how to read,
+					write and do some basic arithmetic at the age of 5.
 				</p>
 				<p>
 					I was very interested in technologies, especially those mechanical cell phones, old
@@ -98,47 +98,54 @@ I use  Arch Linux, btw
 					<b>GTA Vice City</b> on my poor old desktop.
 				</p>
 				<p>
-					The motivation to learn foreign languages started to burn when I was 5th grade, and my mom
-					took me to that local teacher to teach me some basic grammar and I didn't stop learning
-					after that. In 2023, I got my first <b>IELTS certificate, 6</b>
+					The motivation to learn foreign languages started to burn when I was in 5th grade, and my
+					mom took me to a local teacher to teach me some basic grammar. I haven't stopped learning
+					since then. In 2023, I got my first <b>IELTS certificate, 6</b>.
 				</p>
 				<p>
-					I started learning to code back in 2020 in
+					I started learning to code back in 2020 at
 					<a
 						class="font-bold underline bg-[#3abff0] rounded px-1"
 						target="_blank"
 						href="https://www.datatalim.uz/"
 						>@DATA Ta'lim Stansiyasi</a
-					>
-					taking backend-specialized web development course. Yeah, I was originally
-					<b>backender.</b> After officially graduating the course, I didn't leave my teacher's side
-					and stayed there as an <b>intern assistant mentor</b>. By the time I participated a lot of
-					CRM, LMS projects led by my remarkable teacher
-					<a class="font-bold underline" target="_blank" href="https://t.me/kamrondev"
-						>Kamron aka</a
-					>
+					>, taking a backend-specialized web development course. Yeah, I was originally a
+					<b>backender.</b> After officially graduating the course, I stayed as an
+					<b>intern assistant mentor</b>. During that time, I participated in a lot of CRM and LMS
+					projects led by my remarkable teacher
+					<a class="font-bold underline" target="_blank" href="https://t.me/kamrondev">Kamron aka</a
+					>.
 				</p>
 				<p>
-					I have been currently working in
+					In May 2025, I finished my journey at
 					<a
 						class="font-bold underline bg-[#ff4f28] rounded px-1"
 						target="_blank"
 						href="https://coddycamp.uz/"
 						>@CoddyCamp IT Academy</a
 					>
-					as a Mentor since 2024 December. Besides, I do websites and mobile applications from
-					scratch in freelance.
+					where I worked as a mentor. Right after that, I founded my own company —
+					<a
+						class="font-bold underline bg-blue-700 rounded px-1"
+						target="_blank"
+						href="https://novdaunion.uz"
+						>@Novda Union</a
+					>
+					— with a talented team of 7, where I currently lead as the founder and tech lead. We work
+					with big companies, schools, learning centers and manufacturers — including our first
+					partners and sponsors,
+					<a
+						target="_blank"
+						class="font-bold underline bg-red-500 rounded px-1"
+						href="https://www.instagram.com/aplusacademy_ielts"
+						>@AplusAcademy</a
+					>.
 				</p>
-
 				<p>
-					I just started to realise that more you go down deeper into the programming languages,
-					more you start feeling like a real dev. So, I am kind of in the progress of learning
-					<span> <i class="devicon-rust-original"></i> Rust </span> or
-					<span>
-						<i class="devicon-go-plain colored"></i>
-
-						Golang.
-					</span>
+					I just started to realize that the deeper you go into programming languages, the more you
+					start feeling like a real dev. Currently, I’m exploring
+					<span><i class="devicon-rust-original"></i> Rust </span> and
+					<span><i class="devicon-go-plain colored"></i> Golang</span>.
 				</p>
 				<p>
 					I use
@@ -148,6 +155,7 @@ I use  Arch Linux, btw
 					</span>
 				</p>
 			</div>
+
 			<NuxtMarquee
 				:gradient="true"
 				:gradient-color="'#090909'"
@@ -155,38 +163,14 @@ I use  Arch Linux, btw
 				class="flex items-center justify-between mt-4 opacity-50 transition-all hover:opacity-100 cursor-default select-none grayscale hover:grayscale-0"
 			>
 				<div class="stack-wrapper flex items-center gap-4">
-					<div class="stack">
-						<i class="devicon-javascript-plain colored"></i>
-						JavaScript
-					</div>
-					<div class="stack">
-						<i class="devicon-typescript-plain colored"></i>
-						TypeScript
-					</div>
-					<div class="stack">
-						<i class="devicon-nodejs-plain colored"></i>
-						Node.js
-					</div>
-					<div class="stack">
-						<i class="devicon-express-original"></i>
-						Express.js
-					</div>
-					<div class="stack">
-						<i class="devicon-nestjs-original colored"></i>
-						Nest.js
-					</div>
-					<div class="stack">
-						<i class="devicon-postgresql-plain colored"></i>
-						PostgreSQL
-					</div>
-					<div class="stack">
-						<i class="devicon-prisma-original"></i>
-						Prisma
-					</div>
-					<div class="stack">
-						<i class="devicon-react-original colored"></i>
-						React.js
-					</div>
+					<div class="stack"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+					<div class="stack"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+					<div class="stack"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+					<div class="stack"><i class="devicon-express-original"></i> Express.js</div>
+					<div class="stack"><i class="devicon-nestjs-original colored"></i> Nest.js</div>
+					<div class="stack"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+					<div class="stack"><i class="devicon-prisma-original"></i> Prisma</div>
+					<div class="stack"><i class="devicon-react-original colored"></i> React.js</div>
 					<div class="stack flex gap-1">
 						<svg width="16" viewBox="0 0 128 128">
 							<path
@@ -204,25 +188,12 @@ I use  Arch Linux, btw
 						</svg>
 						Vue.js
 					</div>
-					<div class="stack">
-						<i class="devicon-svelte-plain colored"></i>
-						Svelte.js
-					</div>
-					<div class="stack">
-						<i class="devicon-nextjs-plain"></i>
-						Next.js
-					</div>
-					<div class="stack">
-						<i class="devicon-nuxtjs-plain colored"></i>
-						Nuxt.js
-					</div>
-					<div class="stack">
-						<i class="devicon-firebase-plain colored"></i>
-						Firebase
-					</div>
+					<div class="stack"><i class="devicon-svelte-plain colored"></i> Svelte.js</div>
+					<div class="stack"><i class="devicon-nextjs-plain"></i> Next.js</div>
+					<div class="stack"><i class="devicon-nuxtjs-plain colored"></i> Nuxt.js</div>
+					<div class="stack"><i class="devicon-firebase-plain colored"></i> Firebase</div>
 					<div class="stack mr-4">
-						<i class="devicon-tailwindcss-original colored"></i>
-						TailwindCSS
+						<i class="devicon-tailwindcss-original colored"></i> TailwindCSS
 					</div>
 				</div>
 			</NuxtMarquee>
