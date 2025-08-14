@@ -124,16 +124,10 @@ I use  Arch Linux, btw
 						href="https://coddycamp.uz/"
 						>@CoddyCamp IT Academy</a
 					>
-					where I worked as a mentor. Right after that, I founded my own company —
-					<a
-						class="font-bold underline bg-blue-700 rounded px-1"
-						target="_blank"
-						href="https://novdaunion.uz"
-						>@Novda Union</a
-					>
-					— with a talented team of 7, where I currently lead as the founder and tech lead. We work
-					with big companies, schools, learning centers and manufacturers — including our first
-					partners and sponsors,
+					where I worked as a mentor. Right after that, I founded my own company — with a talented
+					team of 7, where I currently lead as the founder and tech lead. We work with big
+					companies, schools, learning centers and manufacturers — including our first partners and
+					sponsors,
 					<a
 						target="_blank"
 						class="font-bold underline bg-red-500 rounded px-1"
