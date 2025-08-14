@@ -186,9 +186,6 @@ I use  Arch Linux, btw
 					<div class="stack"><i class="devicon-nextjs-plain"></i> Next.js</div>
 					<div class="stack"><i class="devicon-nuxtjs-plain colored"></i> Nuxt.js</div>
 					<div class="stack"><i class="devicon-firebase-plain colored"></i> Firebase</div>
-					<div class="stack mr-4">
-						<i class="devicon-tailwindcss-original colored"></i> TailwindCSS
-					</div>
 				</div>
 			</NuxtMarquee>
 		</div>

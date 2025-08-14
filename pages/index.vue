@@ -61,6 +61,7 @@ useHead({
 			</div>
 			<div class="middle">
 				<p class="font-mont text-3xl">mentor & fullstack web dev.</p>
+				<p></p>
 				<div class="social-media flex items-center space-x-4 mt-8">
 					<TelegramIcon />
 					<LinkedinLogo />
