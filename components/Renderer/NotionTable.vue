@@ -140,6 +140,7 @@ function extractCellTexts(row: any): string[] {
 </script>
 
 <style scoped>
+@reference "../../assets/css/main.css"
 .notion-table table {
 	@apply w-full border-collapse;
 }
