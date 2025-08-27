@@ -12,6 +12,7 @@
 </template>
 
 <style scoped>
+@reference "../assets/css/main.css";
 a:hover svg path {
 	@apply fill-white;
 }
