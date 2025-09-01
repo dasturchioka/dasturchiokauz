@@ -8,9 +8,7 @@ useHead({
   link: [
     {
       rel: "canonical",
-      href() {
-        return `https://dasturchioka.uz/about/`;
-      },
+      href: "https://dasturchioka.uz/about/",
     },
   ],
   script: [
@@ -18,11 +16,17 @@ useHead({
       type: "application/ld+json",
       innerHTML: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "AbutPage",
-        headline: "Dasturchioka | About",
-        description: "About Dasturchioka",
-        image: "/images/profile4.jpg",
+        "@type": "AboutPage",
+        headline: "About Dasturchioka",
+        description:
+          "Full biography and professional background of Dasturchioka (Sardor Aminov).",
+        image: "https://dasturchioka.uz/images/profile4.jpg",
         url: "https://dasturchioka.uz/about",
+        author: {
+          "@type": "Person",
+          name: "Sardor Aminov",
+          url: "https://dasturchioka.uz",
+        },
       }),
       tagPriority: "low",
     },
@@ -34,18 +38,20 @@ useHead({
     {
       key: "description",
       name: "description",
-      content: "About Dasturchioka, About Sardor Aminov",
+      content:
+        "Full biography, career background and expertise of Dasturchioka (Sardor Aminov).",
     },
     { key: "og:title", property: "og:title", content: "Dasturchioka | About" },
     {
       key: "og:description",
       property: "og:description",
-      content: "About Dasturchioka, About Sardor Aminov",
+      content:
+        "Learn more about Dasturchioka (Sardor Aminov), his career, projects and skills.",
     },
     {
       key: "og:image",
       property: "og:image",
-      content: "/images/profile4.jpg",
+      content: "https://dasturchioka.uz/images/profile4.jpg",
     },
     {
       key: "og:url",
@@ -54,16 +60,17 @@ useHead({
     },
   ],
 });
+
 useSeoMeta({
   title: "Dasturchioka | About",
-  description: `
-	Born in 2006, Khorezm, Uzbekistan. Fullstack web & mobile engineer
-	`,
+  description:
+    "Biography and professional background of Sardor Aminov, also known as Dasturchioka. Fullstack web & mobile engineer from Uzbekistan.",
   ogTitle: "Dasturchioka | About",
-  ogDescription: "Full information about Dasturchioka",
-  ogImage: "/images/profile4.jpg",
+  ogDescription:
+    "Full information about Sardor Aminov (Dasturchioka): career, expertise and projects.",
+  ogImage: "https://dasturchioka.uz/images/profile4.jpg",
   ogUrl: "https://dasturchioka.uz/about",
-  author: "Sardor Aminov, Dasturchioka",
+  author: "Sardor Aminov",
   robots: "index, follow",
   charset: "utf-8",
 });
@@ -72,7 +79,7 @@ const { theme } = useTheme();
 </script>
 
 <template>
-  <div class="h-screen text-white container sm:w-[800px] mx-auto">
+  <div class="h-screen container sm:w-[800px] mx-auto">
     <div class="toggler sm:my-10 my-4 flex items-center justify-between w-full">
       <h1
         class="font-bold sm:text-lg text-base font-sfpro dark:text-white text-black transition-all"
@@ -81,8 +88,11 @@ const { theme } = useTheme();
       </h1>
       <ThemeToggle />
     </div>
-    <div class="about-wrapper dark:text-white">
-      <div class="texts space-y-4 sm:text-lg text-base dark:text-white">
+
+    <div class="about-wrapper">
+      <div
+        class="texts space-y-4 sm:text-lg text-base dark:text-white text-black"
+      >
         <p
           class="flex items-center gap-4 font-semibold dark:text-white text-black transition-all"
         >
@@ -91,77 +101,80 @@ const { theme } = useTheme();
             <span class="hotspot dot2"></span>
             <span class="hotspot dot3"></span>
           </span>
-          Available for freelance projects
+          Open to freelance opportunities
         </p>
-        <p class="dark:text-white text-black transition-all">
-          Born in 2006, Khorezm, Uzbekistan. My parents saw an earlier self
-          development compared to my peers, so they took me to school at the age
-          of 6. I had already known how to read, write and do some basic
-          arithmetic at the age of 5.
+
+        <p>
+          I was born in 2006 in Khorezm, Uzbekistan. My parents noticed early
+          development compared to my peers, so I began school at the age of six,
+          already knowing how to read, write, and perform basic arithmetic.
         </p>
-        <p class="dark:text-white text-black transition-all">
-          I was very interested in technologies, especially those mechanical
-          cell phones, old digital cameras, nostalgic desktops and etc. The
-          first game I played has to be
-          <b>GTA Vice City</b> on my poor old desktop.
+
+        <p>
+          From a young age, I was fascinated by technology — from mechanical
+          mobile phones and digital cameras to classic desktop computers. The
+          first game I ever played was <b>GTA Vice City</b> on my old desktop.
         </p>
-        <p class="dark:text-white text-black transition-all">
-          The motivation to learn foreign languages started to burn when I was
-          in 5th grade, and my mom took me to a local teacher to teach me some
-          basic grammar. I haven't stopped learning since then. In 2023, I got
-          my first <b>IELTS certificate, 6</b>.
+
+        <p>
+          My journey into foreign languages began in the 5th grade, when I
+          started learning English. Since then, I have continued improving, and
+          in 2023 I earned my first <b>IELTS certificate with a score of 6</b>.
         </p>
-        <p class="dark:text-white text-black transition-all">
-          I started learning to code back in 2020 at
+
+        <p>
+          I began programming in 2020 at
           <a
             class="font-bold underline text-white bg-[#3abff0] rounded px-1 transition-all"
             target="_blank"
             href="https://www.datatalim.uz/"
-            >@DATA Ta'lim Stansiyasi</a
-          >, taking a backend-specialized web development course. Yeah, I was
-          originally a <b>backender.</b> After officially graduating the course,
-          I stayed as an <b>intern assistant mentor</b>. During that time, I
-          participated in a lot of CRM and LMS projects led by my remarkable
-          teacher
+          >
+            @DATA Ta'lim Stansiyasi </a
+          >, where I completed a backend-focused web development program.
+          Following my graduation, I remained at the academy as an
+          <b>assistant mentor</b>, where I supported the lead instructor in
+          teaching students, conducted supplementary online classes, and helped
+          organize learning activities. Beyond mentoring, I collaborated closely
+          with
           <a
             class="font-bold underline"
             target="_blank"
             href="https://t.me/kamrondev"
-            >Kamron aka</a
-          >.
+          >
+            Kamron aka
+          </a>
+          on numerous large-scale CRM and LMS projects, gaining hands-on
+          experience in building production-ready systems while refining both my
+          technical and leadership skills.
         </p>
-        <p class="dark:text-white text-black transition-all">
-          In May 2025, I finished my journey at
+
+        <p>
+          In May 2025, I concluded my time at
           <a
             class="font-bold underline bg-[#ff4f28] text-white rounded px-1 transition-all"
             target="_blank"
             href="https://coddycamp.uz/"
-            >@CoddyCamp IT Academy</a
           >
-          where I worked as a mentor. Right after that, I founded my own company
-          — with a talented team of 7, where I currently lead as the founder and
-          tech lead. We work with big companies, schools, learning centers and
-          manufacturers — including our first partners and sponsors,
-          <a
-            target="_blank"
-            class="font-bold underline bg-red-500 text-white rounded px-1 transition-all"
-            href="https://www.instagram.com/aplusacademy_ielts"
-            >@AplusAcademy</a
-          >.
+            @CoddyCamp IT Academy </a
+          >, where I have worked as a mentor for 6 months. Shortly after, I
+          founded my own company with a talented team of seven. Today, I serve
+          as the founder and tech lead, collaborating with major organizations,
+          schools, learning centers, and manufacturers.
         </p>
-        <p class="dark:text-white text-black transition-all">
-          I just started to realize that the deeper you go into programming
-          languages, the more you start feeling like a real dev. Currently, I’m
-          exploring
-          <span><i class="devicon-rust-original"></i> Rust </span> and
-          <span><i class="devicon-go-plain colored"></i> Golang</span>.
+
+        <p>
+          The deeper I go into programming, the more I feel connected to the
+          craft. Currently, I am exploring
+          <span><i class="devicon-rust-original"></i> Rust</span> and
+          <span><i class="devicon-go-plain colored"></i> Go</span>.
         </p>
-        <p class="dark:text-white text-black transition-all">
-          I use
+
+        <p>
+          My development environment of choice is
           <span class="dark:text-white text-black transition-all">
             <i class="devicon-archlinux-plain colored"></i>
-            Arch Linux, btw
-          </span>
+            Arch Linux </span
+          >.
         </p>
       </div>
 
@@ -219,7 +232,7 @@ const { theme } = useTheme();
           <div class="stack dark:text-white text-black transition-all">
             <i class="devicon-nextjs-plain"></i> Next.js
           </div>
-          <div class="stack">
+          <div class="stack dark:text-white text-black transition-all">
             <i class="devicon-nuxtjs-plain colored"></i> Nuxt.js
           </div>
           <div class="stack dark:text-white text-black transition-all">
