@@ -36,8 +36,9 @@ useHead({
 </script>
 
 <template>
-  <div class="home-page container mx-auto sm:px-4 px-2 dark:text-white text-black font-sfpro">
-    <ThemeToggle/>
+  <div
+    class="home-page container mx-auto sm:px-4 px-2 dark:text-white text-black font-sfpro"
+  >
     <div class="images h-auto mt-4">
       <div class="img">
         <LazyNuxtImg
@@ -50,9 +51,7 @@ useHead({
     </div>
     <div class="text-container flex flex-col items-start space-y-2">
       <div class="top flex flex-col items-start my-4">
-        <h1
-          class="title font-chaviera font-bold md:text-6xl mb-2 sm:text-4xl text-4xl"
-        >
+        <h1 class="title font-bold md:text-6xl mb-2 sm:text-4xl text-4xl">
           Sardor Aminov
         </h1>
         <div
@@ -67,7 +66,9 @@ useHead({
         </div>
       </div>
       <div class="middle">
-        <p class="font-mont text-3xl font-sfpro italic">mentor & fullstack web dev.</p>
+        <p class="font-mont text-3xl font-sfpro italic">
+          mentor & fullstack web dev.
+        </p>
         <p></p>
         <div class="social-media flex items-center space-x-4 mt-8">
           <TelegramIcon />

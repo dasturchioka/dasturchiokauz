@@ -86,15 +86,14 @@ const { theme } = useTheme();
       >
         About Me <span class="text-[#00a6fb]">.</span>
       </h1>
-      <ThemeToggle />
     </div>
 
-    <div class="about-wrapper">
+    <div class="about-wrapper font-sfpro">
       <div
         class="texts space-y-4 sm:text-lg text-base dark:text-white text-black"
       >
         <p
-          class="flex items-center gap-4 font-semibold dark:text-white text-black transition-all"
+          class="flex items-center gap-4 font-semibold dark:text-white text-black transition-all font-sfpro"
         >
           <span class="ml-2 hotspot dots-container">
             <span class="hotspot dot1"></span>
@@ -104,13 +103,13 @@ const { theme } = useTheme();
           Open to freelance opportunities
         </p>
 
-        <p>
+      <p>
           I was born in 2006 in Khorezm, Uzbekistan. My parents noticed early
           development compared to my peers, so I began school at the age of six,
           already knowing how to read, write, and perform basic arithmetic.
         </p>
 
-        <p>
+      <p>
           From a young age, I was fascinated by technology — from mechanical
           mobile phones and digital cameras to classic desktop computers. The
           first game I ever played was <b>GTA Vice City</b> on my old desktop.

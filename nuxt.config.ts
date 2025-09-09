@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     "nuxt-marquee",
     "@artmizu/yandex-metrika-nuxt",
+    "nuxt-lucide-icons",
   ],
   shiki: {
     defaultTheme: "github-dark-default",
@@ -38,10 +39,6 @@ export default defineNuxtConfig({
           type: "text/css",
           href: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css",
         },
-        {
-          href: "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/around.css",
-          rel: "stylesheet",
-        },
       ],
     },
   },
@@ -55,8 +52,13 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: true,
+    enabled: false,
   },
 
   compatibilityDate: "2025-02-27",
+  runtimeConfig: {
+    public: {
+      openaiApiKey: process.env.OPENAI_API_KEY,
+    },
+  },
 });
