@@ -12,7 +12,7 @@ useHead({
       key: "description",
       name: "description",
       content:
-        "Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff and teach people how to build",
+        "Sardor Aminov, also known as dasturchioka, fullstack web and mobile developer since 2020, also mentor",
     },
     {
       key: "og:title",
@@ -23,12 +23,12 @@ useHead({
       key: "og:description",
       property: "og:description",
       content:
-        "Sardor Aminov, also known as dasturchioka, is a young Uzbek developer who builds stuff and teach people how to build.",
+        "Sardor Aminov, also known as dasturchioka, fullstack web and mobile developer since 2020, also mentor",
     },
     {
       key: "og:image",
       property: "og:image",
-      content: "/images/profile4.jpg",
+      content: "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
     },
     { key: "og:url", property: "og:url", content: "https://dasturchioka.uz" },
   ],

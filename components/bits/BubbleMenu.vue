@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { LucideApple, LucideBadgeInfo, LucideHome, LucidePencilRuler } from "#components";
+import {
+  LucideApple,
+  LucideBadgeInfo,
+  LucideHome,
+  LucidePencilRuler,
+} from "#components";
 import { useTheme } from "#imports";
 import { gsap } from "gsap";
 import {
@@ -59,7 +64,7 @@ const DEFAULT_ITEMS: MenuItem[] = [
     ariaLabel: "About",
     rotation: 4,
     hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
-    icon: LucideBadgeInfo
+    icon: LucideBadgeInfo,
   },
   {
     label: "Products",
@@ -67,7 +72,7 @@ const DEFAULT_ITEMS: MenuItem[] = [
     ariaLabel: "Products",
     rotation: 8,
     hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
-    icon: LucideApple
+    icon: LucideApple,
   },
   {
     label: "Services",
@@ -75,7 +80,7 @@ const DEFAULT_ITEMS: MenuItem[] = [
     ariaLabel: "Services",
     rotation: 8,
     hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
-    icon: LucidePencilRuler
+    icon: LucidePencilRuler,
   },
 ];
 
@@ -322,7 +327,7 @@ watch(
                 'shadow-[0_4px_14px_rgba(0,0,0,0.10)]',
                 'flex items-center justify-center',
                 'relative',
-                'transition-[background,color] duration-300 ease-in-out',
+                'transition-[background,color]  ease-in-out',
                 'box-border',
                 'whitespace-nowrap overflow-hidden',
                 'bg-[#151515] dark:bg-white text-white dark:text-[#151515]',

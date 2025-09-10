@@ -20,8 +20,8 @@
 <style scoped>
 @reference "../assets/css/main.css";
 
-a:hover svg path {
-  @apply fill-white;
+a svg path {
+  @apply hover:fill-gray-400 dark:hover:fill-white;
 }
 svg path {
   @apply transition;

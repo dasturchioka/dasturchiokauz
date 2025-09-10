@@ -1,12 +1,27 @@
 <script setup lang="ts">
-import { LucideLoader, LucideLoaderPinwheel } from "#components";
-import { ref, reactive, computed, nextTick, watch } from "vue";
+import { ref, computed, nextTick, watch } from "vue";
+import BlurText from "../bits/BlurText.vue";
+import FadeContent from "../bits/FadeContent.vue";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import Button from "../ui/button/Button.vue";
 
 interface TerminalMessage {
   role: "user" | "assistant" | "system";
   text: string;
   html?: string;
 }
+
+let controller: AbortController | null = null;
 
 const emits = defineEmits(["dismissed"]);
 
@@ -150,11 +165,13 @@ const callOpenAIStream = async (userInput: string) => {
   const assistantMsg: TerminalMessage = { role: "assistant", text: "" };
   messages.value.push(assistantMsg);
   await scrollToBottom();
+  controller = new AbortController();
 
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
       body: JSON.stringify({ prompt: userInput }),
+      signal: controller.signal,
     });
 
     if (!res.body) throw new Error("No stream available");
@@ -211,13 +228,112 @@ const callOpenAIStream = async (userInput: string) => {
     await scrollToBottom();
   }
 };
+
+const isTheFirstMessage = computed(() => {
+  return messages.value.length >= 3;
+});
+
+const cancelRequest = () => {
+  if (controller) {
+    controller.abort();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("keydown", handleShortcut);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("keydown", handleShortcut);
+});
+
+const handleShortcut = (e: KeyboardEvent) => {
+  if (e.ctrlKey && e.key.toLowerCase() === "c" && isLoading.value) {
+    e.preventDefault();
+    cancelRequest();
+  }
+};
+
+useHead({
+  title: "Dasturchioka | Snark Bot",
+  meta: [
+    { name: "robots", content: "index, follow" },
+    { charset: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    {
+      key: "description",
+      name: "description",
+      content:
+        "Sardor Aminov, also known as dasturchioka, fullstack web and mobile developer since 2020, also mentor",
+    },
+    {
+      key: "og:title",
+      property: "og:title",
+      content: "Dasturchioka | Sardor Aminov",
+    },
+    {
+      key: "og:description",
+      property: "og:description",
+      content:
+        "Sardor Aminov, also known as dasturchioka, fullstack web and mobile developer since 2020, also mentor",
+    },
+    {
+      key: "og:image",
+      property: "og:image",
+      content: "/images/profile4.jpg",
+    },
+    { key: "og:url", property: "og:url", content: "https://dasturchioka.uz" },
+  ],
+});
 </script>
 
 <template>
-  <ClientOnly>
-    <div
-      v-if="!hasLoaded"
-      class="w-full h-screen bg-black text-white flex flex-col items-center justify-center font-mono"
+  <div
+    v-if="!hasLoaded"
+    class="w-full h-screen relative flex flex-col items-center justify-center font-mono px-2"
+  >
+    <div class="titles font-sfpro flex flex-col items-center justify-between">
+      <div class="bot-image w-[140px]">
+        <FadeContent
+          :blur="true"
+          :duration="1000"
+          :delay="200"
+          :threshold="0.1"
+          :initial-opacity="0"
+          easing="ease-out"
+          class="w-full flex items-center justify-center"
+        >
+          <NuxtImg
+            src="/images/snarkbot.png"
+            alt="Snark bot, Dasturchioka"
+            class="w-full h-full object-cover"
+          />
+        </FadeContent>
+      </div>
+      <div
+        class="texts text-center flex flex-col items-center justify-center mb-4 w-[90%]"
+      >
+        <BlurText
+          text="I’m SnarkBot, the gatekeeper. Want in? Prove you can handle my sarcasm first."
+          :delay="200"
+          class-name="sm:text-xl text-lg  text-center font-sfpro flex items-center justify-center"
+          animate-by="words"
+          direction="top"
+          :threshold="0.1"
+          root-margin="0px"
+          :step-duration="0.35"
+        />
+      </div>
+    </div>
+
+    <FadeContent
+      :blur="true"
+      :duration="1000"
+      :delay="200"
+      :threshold="0.1"
+      :initial-opacity="0"
+      easing="ease-out"
+      class="w-full flex items-center justify-center"
     >
       <div
         class="w-full max-w-2xl bg-black p-4 rounded-xl border border-white/20 shadow-lg"
@@ -226,25 +342,6 @@ const callOpenAIStream = async (userInput: string) => {
           ref="messageBox"
           class="h-96 overflow-y-auto mb-4 space-y-2 transition-all"
         >
-          <div class="space-y-2">
-            <!-- Line 1 -->
-            <p>
-              Hello, this is a bot developed by
-              <span class="text-blue-500">Dasturchioka</span> <br />
-
-              Pass me through to access the website's content
-              <br />
-              Good luck, champ!
-            </p>
-            <!-- Line 2 -->
-            <p
-              class="typing overflow-hidden whitespace-nowrap border-r-2 border-white animate-typing animation-delay-500"
-            ></p>
-            <!-- Line 3 -->
-            <p
-              class="typing overflow-hidden whitespace-nowrap border-r-2 border-white animate-typing animation-delay-1000"
-            ></p>
-          </div>
           <div
             v-for="(msg, i) in messages"
             :key="i"
@@ -275,23 +372,67 @@ const callOpenAIStream = async (userInput: string) => {
             />
           </form>
 
-          <div v-if="isLoading" class="animate-pulse">
-            {{ currentLoadingMessage }}
+          <div v-if="isLoading">
+            <div class="animate-pulse">
+              {{ currentLoadingMessage }}
+            </div>
+            <button
+              class="px-2 py-1 mt-2 rounded bg-neutral-900 hover:bg-red-700 transition-all text-white text-sm self-start"
+              @click="cancelRequest"
+            >
+              Cancel (Ctrl+C)
+            </button>
           </div>
         </div>
       </div>
-    </div>
-    <template #fallback>
-      <div
-        class="fixed inset-0 w-full h-screen z-[100] flex items-center justify-center dark:bg-[#151515] bg-white dark:text-white text-black font-sfpro flex-col gap-4"
-      >
-        <LucideLoader class="size-10 animate-spin" />
-      </div>
-    </template>
-  </ClientOnly>
+    </FadeContent>
+    <FadeContent
+      v-if="isTheFirstMessage"
+      :blur="true"
+      :duration="1000"
+      :delay="200"
+      :threshold="0.1"
+      :initial-opacity="0"
+      easing="ease-out"
+      class="w-full flex items-center justify-center"
+    >
+      <AlertDialog>
+        <AlertDialogTrigger class="mt-4">
+          <Button class="font-sfpro">Tired of being roasted?</Button>
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              You are about to visit the main content of <b>dasturchioka.uz</b>,
+              are you sure about that? You are going to miss a lot, mate.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction @click="() => emits('dismissed', true)">Continue</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </FadeContent>
+  </div>
 </template>
 
 <style scoped>
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
 .h-96 {
   scrollbar-width: thin;
   scrollbar-color: #666 transparent;

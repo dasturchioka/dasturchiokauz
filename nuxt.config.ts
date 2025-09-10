@@ -15,7 +15,20 @@ export default defineNuxtConfig({
     "nuxt-marquee",
     "@artmizu/yandex-metrika-nuxt",
     "nuxt-lucide-icons",
+    "shadcn-nuxt",
+    "@nuxtjs/mdc",
   ],
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "",
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: "./components/ui",
+  },
   shiki: {
     defaultTheme: "github-dark-default",
   },

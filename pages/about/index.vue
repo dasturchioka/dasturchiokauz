@@ -20,7 +20,7 @@ useHead({
         headline: "About Dasturchioka",
         description:
           "Full biography and professional background of Dasturchioka (Sardor Aminov).",
-        image: "https://dasturchioka.uz/images/profile4.jpg",
+        image: "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
         url: "https://dasturchioka.uz/about",
         author: {
           "@type": "Person",
@@ -51,7 +51,7 @@ useHead({
     {
       key: "og:image",
       property: "og:image",
-      content: "https://dasturchioka.uz/images/profile4.jpg",
+      content: "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
     },
     {
       key: "og:url",

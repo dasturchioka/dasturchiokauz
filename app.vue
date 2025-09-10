@@ -11,6 +11,7 @@ const router = useRouter();
 const route = useRoute();
 
 const showLoader = ref(true);
+const showFallback = ref(true); // NEW: controls fallback div separately
 
 // Disable automatic scroll changes on navigation
 onMounted(() => {
@@ -25,7 +26,6 @@ onMounted(() => {
 onMounted(() => {
   if (import.meta.client) {
     if (route.query.access === "granted-by-dasturchioka") {
-      // Force bypass loader
       showLoader.value = false;
       sessionStorage.setItem("loaderDismissed", "true");
     }
@@ -34,14 +34,12 @@ onMounted(() => {
       showLoader.value = false;
     }
   }
-  // Emergency query parameter check
 });
 
-// Also watch route changes for query updates
 if (import.meta.client) {
   watch(
     () => route.query.access,
-    (newVal) => {
+    (newVal: string) => {
       if (newVal === "granted-by-dasturchioka") {
         showLoader.value = false;
         sessionStorage.setItem("loaderDismissed", "true");
@@ -52,21 +50,38 @@ if (import.meta.client) {
 
 function handleLoaderDismissed() {
   sessionStorage.setItem("loaderDismissed", "true");
-  showLoader.value = false;
+
+  // Start fading out fallback
+  showFallback.value = false;
+
+  // Wait for CSS transition to finish before killing layout
   setTimeout(() => {
+    showLoader.value = false;
     router.push("/");
-  }, 1000);
+  }, 600); // match this to transition duration
 }
 </script>
 
 <template>
   <div>
-    <WebsiteLoader v-if="showLoader" @dismissed="handleLoaderDismissed" />
     <div
-      v-else
       class="bg-white text-black dark:bg-[#151515] dark:text-white transition-all duration-500"
     >
-      <NuxtLayout>
+      <NuxtLayout name="non-container" v-if="showLoader">
+        <ClientOnly>
+          <WebsiteLoader @dismissed="handleLoaderDismissed" />
+          <template #fallback>
+            <div
+              v-if="showLoader"
+              class="bg-white text-black dark:bg-[#151515] dark:text-white font-sfpro w-full h-screen flex items-center justify-center fixed inset z-[100]"
+            >
+              <LucideLoader class="size-10 animate-spin" />
+            </div>
+          </template>
+        </ClientOnly>
+      </NuxtLayout>
+
+      <NuxtLayout v-else>
         <div
           class="h-[100dvh] overflow-x-hidden flex flex-col items-center justify-between overflow-y-scroll"
         >
