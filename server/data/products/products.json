@@ -133,5 +133,38 @@
       "The backend leverages **Express.js and Prisma** to manage relational data in a **PostgreSQL database**, while the frontend is built with **Vue.js + TailwindCSS** for a modern, responsive UI. Written in **TypeScript**, the system is both robust and maintainable.",
       "Contact me for **DEMO**"
     ]
+  },
+  {
+    "id": "proj-7",
+    "title": "Chizzaro Delivery App",
+    "description": "A multi-panel delivery management system for a pizza restaurant, designed with separate apps for clients, couriers, and an admin dashboard. Built with Vue.js, Capacitor.js, and a solid backend, the project reached MVP but was paused before full production.",
+    "status": "failed",
+    "year": "2024",
+    "stack": [
+      "Mobile App",
+      "Vue.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Capacitor.js",
+      "Express.js",
+      "PostgreSQL"
+    ],
+    "bannerUrl": "https://i.ibb.co/4gpphgHv/image.png",
+    "demoLink": [],
+    "sourceCode": [
+      "https://github.com/dasturchioka/chizzaro-pizza-client",
+      "https://github.com/dasturchioka/chizzaro-server",
+      "https://github.com/dasturchioka/chizzaro-pizza-admin",
+      "https://github.com/dasturchioka/chizzaro-pizza-courier"
+    ],
+    "demoVideo": "",
+    "paragraphs": [
+      "The Chizzaro Delivery App was created to serve a pizza restaurant with an integrated system for clients, couriers, and administrators. The vision was to unify the ordering, delivery, and management process into one seamless ecosystem tailored to the restaurant’s daily operations.",
+      "The system was designed with three distinct panels: an **Admin dashboard** (web) for managing orders, menu items, and couriers; a **Courier mobile app** for delivery management; and a **Client mobile app** for browsing the menu, placing orders, and tracking deliveries. Both client and courier apps were developed with **Vue.js**, compiled to native-like mobile apps using **Capacitor.js**.",
+      "The admin dashboard included essential modules like order tracking, courier assignment, and menu customization. It also integrated analytics features to give the restaurant owner visibility into sales and delivery performance. Couriers could update their status in real time, while clients received live updates on order preparation and delivery.",
+      "Although the project reached an MVP stage, it was paused before deployment. Some core features were functional and the codebase was solid, but the product wasn’t polished enough for production and needed further iteration to meet real-world demands. Limited resources and business priorities led to its suspension.",
+      "Despite being marked as failed, the Chizzaro project represents valuable experience in building cross-platform apps with **Vue + Capacitor**, coordinating multiple user roles, and creating a delivery management workflow. The architecture and lessons from this system remain a strong foundation for future delivery-related projects.",
+      "Contact me for **DEMO**"
+    ]
   }
 ]

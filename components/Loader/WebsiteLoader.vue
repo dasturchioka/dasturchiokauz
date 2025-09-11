@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref, computed, nextTick, watch } from "vue";
-import BlurText from "../bits/BlurText.vue";
-import FadeContent from "../bits/FadeContent.vue";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -19,9 +17,11 @@ interface TerminalMessage {
   role: "user" | "assistant" | "system";
   text: string;
   html?: string;
+  id: string;
 }
 
 let controller: AbortController | null = null;
+let messageIdCounter = 0;
 
 const emits = defineEmits(["dismissed"]);
 
@@ -31,7 +31,7 @@ const input = ref("");
 const messages = ref<TerminalMessage[]>([]);
 const isLoading = ref(false);
 const hasLoaded = ref(false);
-const typeInput = ref<HTMLInputElement | null>(null);
+const typeInput = ref<HTMLTextAreaElement | null>(null);
 const messageBox = ref<HTMLDivElement | null>(null);
 
 const loadingMessages = ref([
@@ -108,15 +108,28 @@ const scrollToBottom = async () => {
   }
 };
 
-const handleSubmit = async () => {
+const adjustTextareaHeight = () => {
+  if (typeInput.value) {
+    typeInput.value.style.height = "auto";
+    typeInput.value.style.height =
+      Math.min(typeInput.value.scrollHeight, 120) + "px";
+  }
+};
+
+const handleSubmit = async (e?: KeyboardEvent) => {
   const userInput = input.value.trim();
   if (!userInput) return;
 
   // Clear input immediately
   input.value = "";
+  adjustTextareaHeight();
 
   // Add user message and scroll
-  messages.value.push({ role: "user", text: `> ${userInput}` });
+  messages.value.push({
+    role: "user",
+    text: userInput,
+    id: `msg-${messageIdCounter++}`,
+  });
   await scrollToBottom();
 
   // Commands
@@ -124,6 +137,7 @@ const handleSubmit = async () => {
     messages.value.push({
       role: "assistant",
       text: "Commands: /help, /load, /this. Everything else → talk to me.",
+      id: `msg-${messageIdCounter++}`,
     });
     await scrollToBottom();
     // Focus input after command
@@ -137,10 +151,11 @@ const handleSubmit = async () => {
     messages.value.push({
       role: "assistant",
       text: "You are finally opening the content, yay!",
+      id: `msg-${messageIdCounter++}`,
     });
     setTimeout(() => {
-      emits("dismissed", true);
-    }, 3000);
+      hasLoaded.value = true; // Trigger leave transition
+    }, 2000);
     return;
   }
 
@@ -148,6 +163,7 @@ const handleSubmit = async () => {
     messages.value.push({
       role: "assistant",
       text: "Local command triggered. (AI not called here yet).",
+      id: `msg-${messageIdCounter++}`,
     });
     await scrollToBottom();
     // Focus input after command
@@ -162,7 +178,11 @@ const handleSubmit = async () => {
 
 const callOpenAIStream = async (userInput: string) => {
   isLoading.value = true;
-  const assistantMsg: TerminalMessage = { role: "assistant", text: "" };
+  const assistantMsg: TerminalMessage = {
+    role: "assistant",
+    text: "",
+    id: `msg-${messageIdCounter++}`,
+  };
   messages.value.push(assistantMsg);
   await scrollToBottom();
   controller = new AbortController();
@@ -239,8 +259,21 @@ const cancelRequest = () => {
   }
 };
 
+const onEnter = (el: Element) => {
+  // Optional: Add any enter animations here
+};
+
+const onLeave = (el: Element, done: () => void) => {
+  // Emit dismissed after leave animation completes
+  setTimeout(() => {
+    emits("dismissed", true);
+    done();
+  }, 600); // Match transition duration
+};
+
 onMounted(() => {
   window.addEventListener("keydown", handleShortcut);
+  adjustTextareaHeight();
 });
 
 onUnmounted(() => {
@@ -288,134 +321,230 @@ useHead({
 </script>
 
 <template>
-  <div
-    v-if="!hasLoaded"
-    class="w-full h-screen relative flex flex-col items-center justify-center font-mono px-2"
+  <transition
+    name="website-loader"
+    appear
+    @enter="onEnter"
+    @leave="onLeave"
   >
-    <div class="titles font-sfpro flex flex-col items-center justify-between">
-      <div class="bot-image w-[140px]">
-        <FadeContent
-          :blur="true"
-          :duration="1000"
-          :delay="200"
-          :threshold="0.1"
-          :initial-opacity="0"
-          easing="ease-out"
-          class="w-full flex items-center justify-center"
-        >
+    <div
+      v-if="!hasLoaded"
+      class="w-full h-screen relative flex flex-col items-center justify-center font-mono px-2"
+    >
+      <div class="titles font-sfpro flex flex-col items-center justify-between">
+        <div class="bot-image w-[140px]">
           <NuxtImg
             src="/images/snarkbot.png"
             alt="Snark bot, Dasturchioka"
             class="w-full h-full object-cover"
           />
-        </FadeContent>
+        </div>
+        <div
+          class="texts text-center flex flex-col items-center justify-center mb-4 w-[90%]"
+        >
+          <h1 class="sm:text-xl text-lg text-center font-sfpro">
+            I'm SnarkBot, the gatekeeper. Want in? Prove you can handle my sarcasm first.
+          </h1>
+        </div>
       </div>
-      <div
-        class="texts text-center flex flex-col items-center justify-center mb-4 w-[90%]"
-      >
-        <BlurText
-          text="I’m SnarkBot, the gatekeeper. Want in? Prove you can handle my sarcasm first."
-          :delay="200"
-          class-name="sm:text-xl text-lg  text-center font-sfpro flex items-center justify-center"
-          animate-by="words"
-          direction="top"
-          :threshold="0.1"
-          root-margin="0px"
-          :step-duration="0.35"
-        />
-      </div>
-    </div>
 
-    <FadeContent
-      :blur="true"
-      :duration="1000"
-      :delay="200"
-      :threshold="0.1"
-      :initial-opacity="0"
-      easing="ease-out"
-      class="w-full flex items-center justify-center"
-    >
-      <div
-        class="w-full max-w-2xl bg-black p-4 rounded-xl border border-white/20 shadow-lg"
-      >
+      <div class="w-full max-w-4xl bg-black/90 backdrop-blur-sm rounded-xl border border-white/20 shadow-2xl overflow-hidden flex flex-col h-[500px]">
+        <!-- Chat Messages Area -->
         <div
           ref="messageBox"
-          class="h-96 overflow-y-auto mb-4 space-y-2 transition-all"
+          class="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth"
         >
           <div
             v-for="(msg, i) in messages"
-            :key="i"
-            class="whitespace-pre-wrap"
+            :key="msg.id"
+            class="message-animate"
+            :class="
+              msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'
+            "
           >
-            <span v-if="msg.html" v-html="msg.html" />
-            <span v-else>
-              {{
-                msg.role !== "user" && msg.text.startsWith(">")
-                  ? msg.text.slice(1).trimStart()
-                  : msg.text
-              }}
-            </span>
+            <!-- Assistant Message (Left side with robot icon) -->
+            <div
+              v-if="msg.text &&  msg.role === 'assistant'"
+              class="flex items-start space-x-3 max-w-[80%]"
+            >
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="bg-gray-800/80 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 text-white/90 shadow-lg"
+              >
+                <div class="whitespace-pre-wrap break-words">
+                  <span v-if="msg.html" v-html="msg.html" />
+                  <span v-else>{{ msg.text }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Message (Right side) -->
+            <div
+              v-else-if="msg.role === 'user'"
+              class="flex items-start space-x-3 max-w-[80%]"
+            >
+              <div
+                class="bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl rounded-tr-sm px-4 py-3 text-white shadow-lg"
+              >
+                <div class="whitespace-pre-wrap break-words">
+                  {{ msg.text }}
+                </div>
+              </div>
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
 
-          <form
-            v-if="!isLoading"
-            @submit.prevent="handleSubmit"
-            class="flex space-x-2"
-          >
-            <span class="wrap-normal">></span>
-            <input
-              ref="typeInput"
-              v-model="input"
-              type="text"
-              class="outline-none border-none w-full bg-transparent text-white"
-              autofocus
-            />
-          </form>
-
-          <div v-if="isLoading">
-            <div class="animate-pulse">
-              {{ currentLoadingMessage }}
+          <!-- Loading indicator -->
+          <div v-if="isLoading" class="flex justify-start">
+            <div class="flex items-start space-x-3 max-w-[80%]">
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white animate-spin"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  ></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+              </div>
+              <div
+                class="bg-gray-800/60 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 text-white/70 shadow-lg"
+              >
+                <div class="flex items-center space-x-2">
+                  <div class="animate-pulse">{{ currentLoadingMessage }}</div>
+                </div>
+                <button
+                  class="mt-2 px-3 py-1 text-xs rounded-lg bg-red-600/80 hover:bg-red-700 transition-colors text-white"
+                  @click="cancelRequest"
+                >
+                  Cancel (Ctrl+C)
+                </button>
+              </div>
             </div>
-            <button
-              class="px-2 py-1 mt-2 rounded bg-neutral-900 hover:bg-red-700 transition-all text-white text-sm self-start"
-              @click="cancelRequest"
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="border-t border-white/10 p-4 bg-black/50 backdrop-blur-sm">
+          <div class="flex items-end space-x-3">
+            <div class="flex-1 relative">
+              <textarea
+                ref="typeInput"
+                v-model="input"
+                @keydown.enter="handleSubmit"
+                @input="adjustTextareaHeight"
+                placeholder="Type your message..."
+                class="w-full bg-gray-800/60 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 resize-none outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all min-h-[48px] max-h-[120px]"
+                rows="1"
+                :disabled="isLoading"
+                autofocus
+              />
+            </div>
+            <Button
+              @click="handleSubmit"
+              :disabled="!input.trim() || isLoading"
+              class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-700 hover:from-blue-700 hover:to-purple-800 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed rounded-xl flex items-center justify-center text-white transition-all shadow-lg hover:shadow-xl"
             >
-              Cancel (Ctrl+C)
-            </button>
+              <svg
+                v-if="!isLoading"
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                ></path>
+              </svg>
+              <svg
+                v-else
+                class="w-5 h-5 animate-spin"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+            </Button>
           </div>
         </div>
       </div>
-    </FadeContent>
-    <FadeContent
-      v-if="isTheFirstMessage"
-      :blur="true"
-      :duration="1000"
-      :delay="200"
-      :threshold="0.1"
-      :initial-opacity="0"
-      easing="ease-out"
-      class="w-full flex items-center justify-center"
-    >
-      <AlertDialog>
-        <AlertDialogTrigger class="mt-4">
-          <Button class="font-sfpro">Tired of being roasted?</Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              You are about to visit the main content of <b>dasturchioka.uz</b>,
-              are you sure about that? You are going to miss a lot, mate.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction @click="() => emits('dismissed', true)">Continue</AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-    </FadeContent>
-  </div>
+
+      <div v-if="isTheFirstMessage" class="mt-4">
+        <AlertDialog>
+          <AlertDialogTrigger>
+            <Button class="font-sfpro">Tired of being roasted?</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+              <AlertDialogDescription>
+                You are about to visit the main content of <b>dasturchioka.uz</b>,
+                are you sure about that? You are going to miss a lot, mate.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction @click="() => { hasLoaded = true; }"
+                >Continue</AlertDialogAction
+              >
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <style scoped>
@@ -429,53 +558,87 @@ useHead({
   }
 }
 
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-animate {
+  animation: messageSlideIn 0.3s ease-out forwards;
+}
+
 .animate-gradient-x {
   background-size: 200% 200%;
   animation: gradient-x 3s ease infinite;
 }
-.h-96 {
+
+/* Custom scrollbar */
+.overflow-y-auto {
   scrollbar-width: thin;
-  scrollbar-color: #666 transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-input {
-  caret-color: white;
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
 }
 
-input::placeholder {
-  color: #666;
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
 }
 
-@keyframes blinkCaret {
-  0%,
-  100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
-  }
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-.typing {
-  width: 0;
-  animation: typing 3s steps(50, end) forwards,
-    blinkCaret 0.75s step-end infinite;
+/* Textarea styling */
+textarea {
+  field-sizing: content;
 }
 
-/* Add delays for multiple lines */
-.animation-delay-500 {
-  animation-delay: 0.5s, 0s;
+textarea::placeholder {
+  color: rgba(156, 163, 175, 0.7);
 }
-.animation-delay-1000 {
-  animation-delay: 1s, 0s;
+
+/* Message bubble shadows */
+.bg-gray-800\/80,
+.bg-gradient-to-br {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Component transition styles */
+.website-loader-enter-active {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.website-loader-leave-active {
+  transition: all 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.website-loader-enter-from {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+}
+
+.website-loader-leave-to {
+  opacity: 0;
+  transform: scale(1.05) translateY(-20px);
 }
 </style>

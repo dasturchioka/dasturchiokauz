@@ -33,23 +33,6 @@
       "cardBorder": "dark:border-neutral-800"
     }
   },
-  "failed": {
-    "title": "Failed",
-    "light": {
-      "bg": "bg-red-50",
-      "border": "border-red-200",
-      "text": "text-red-800",
-      "cardBg": "bg-white",
-      "cardBorder": "border-red-100"
-    },
-    "dark": {
-      "bg": "dark:bg-red-950/30",
-      "border": "dark:border-red-800/50",
-      "text": "dark:text-red-200",
-      "cardBg": "dark:bg-neutral-900",
-      "cardBorder": "dark:border-neutral-800"
-    }
-  },
   "archived": {
     "title": "Archived",
     "light": {
@@ -63,6 +46,23 @@
       "bg": "dark:bg-gray-950/30",
       "border": "dark:border-gray-800/50",
       "text": "dark:text-gray-200",
+      "cardBg": "dark:bg-neutral-900",
+      "cardBorder": "dark:border-neutral-800"
+    }
+  },
+  "failed": {
+    "title": "Failed",
+    "light": {
+      "bg": "bg-red-50",
+      "border": "border-red-200",
+      "text": "text-red-800",
+      "cardBg": "bg-white",
+      "cardBorder": "border-red-100"
+    },
+    "dark": {
+      "bg": "dark:bg-red-950/30",
+      "border": "dark:border-red-800/50",
+      "text": "dark:text-red-200",
       "cardBg": "dark:bg-neutral-900",
       "cardBorder": "dark:border-neutral-800"
     }

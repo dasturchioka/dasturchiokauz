@@ -81,7 +81,7 @@ function handleLoaderDismissed() {
         </ClientOnly>
       </NuxtLayout>
 
-      <NuxtLayout v-else>
+      <NuxtLayout class="still this container tho" v-else>
         <div
           class="h-[100dvh] overflow-x-hidden flex flex-col items-center justify-between overflow-y-scroll"
         >
