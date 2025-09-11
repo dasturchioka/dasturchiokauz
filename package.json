@@ -29,6 +29,7 @@
 	"dependencies": {
 		"@artmizu/yandex-metrika-nuxt": "^1.2.1",
 		"@notionhq/client": "^5.0.0",
+		"@nuxt/content": "^3.6.3",
 		"@nuxt/image": "^1.11.0",
 		"@nuxt/kit": "^4.1.1",
 		"@nuxt/schema": "^4.1.1",

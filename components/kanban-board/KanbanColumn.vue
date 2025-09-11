@@ -35,7 +35,7 @@ defineProps<{
     </div>
 
     <!-- Projects List -->
-    <div class="flex-1 overflow-y-auto space-y-4 pr-1 transition-all">
+    <div class="flex-1 overflow-y-auto flex flex-col gap-4 pr-1 transition-all">
       <ProjectCard
         v-for="proj in projects"
         :key="proj.id"

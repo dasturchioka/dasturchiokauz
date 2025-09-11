@@ -73,7 +73,7 @@ function handleLoaderDismissed() {
           <template #fallback>
             <div
               v-if="showLoader"
-              class="bg-white text-black dark:bg-[#151515] dark:text-white font-sfpro w-full h-screen flex items-center justify-center fixed inset z-[100]"
+              class="bg-white text-black dark:bg-[#151515] dark:text-white font-sfpro w-screen h-screen flex items-center justify-center fixed inset-0 z-[100]"
             >
               <LucideLoader class="size-10 animate-spin" />
             </div>

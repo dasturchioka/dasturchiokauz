@@ -1,0 +1,137 @@
+[
+  {
+    "id": "proj-1",
+    "title": "IELTS CD Mock Exam Platform for LCs and self learners",
+    "description": "A production-grade platform replicating the official computer-delivered IELTS exam experience.",
+    "status": "successful",
+    "year": "2025",
+    "stack": ["Next.js", "Supabase", "TailwindCSS", "TypeScript", "Vercel"],
+    "bannerUrl": "https://i.ibb.co/SD3q66nT/Screenshot-20250911-013826.jpg",
+    "demoLink": ["https://www.aplusacademy.uz/"],
+    "demoVideo": "https://youtu.be/RELewHrQ7w4",
+    "paragraphs": [
+      "The IELTS CD Mock Exam Platform is a fully functional system used by multiple learning centres in Uzbekistan to conduct realistic IELTS practice tests. It closely mirrors the official computer-delivered IELTS exam, giving students the chance to prepare under authentic conditions.",
+      "The platform was built with **Next.js** for blazing-fast performance and SEO-ready rendering, while **Supabase** powers authentication, secure data storage, and real-time features. A clean, exam-focused UI designed with **TailwindCSS** ensures candidates can focus solely on their performance without distractions.",
+      "It supports these modules: **Listening, Reading and Writing**. Listening tasks feature timed audio playback with no replay beyond the rules. Writing tasks include autosave, word count enforcement, and timed submission. Reading tasks replicate the split-screen question format found in the official test. You still can grade student's speaking results through admin dashboard.",
+      "Teachers and admins benefit from a backend that allows them to upload new test materials, manage candidates, and review results. Students receive detailed score breakdowns and progress analytics, helping them identify their strengths and weaknesses.",
+      "The system has been successfully deployed in local centres and continues to serve hundreds of test-takers. Future improvements aim to include **AI-driven essay evaluation**, mobile app support, and integration with third-party learning platforms.",
+      "Contact me for **DEMO**"
+    ]
+  },
+  {
+    "id": "proj-2",
+    "title": "LMS for universities and schools",
+    "description": "LMS Alfa is a modern, role-based Learning Management System designed for schools and universities. It unifies attendance, grading, assignments, and reporting into a single streamlined platform powered by Supabase and React.",
+    "status": "archived",
+    "year": "2025",
+    "stack": ["React.js", "Supabase", "TailwindCSS", "TypeScript", "Vercel"],
+    "bannerUrl": "https://i.postimg.cc/Bv9DdqWv/Screenshot-20250911-140455.jpg",
+    "demoLink": [],
+    "demoVideo": "https://youtu.be/7n6V3YFdrsA",
+    "paragraphs": [
+      "LMS Alfa is built to help educational institutions manage their daily operations with ease. It brings together teachers, students, parents, and administrators into one platform, reducing fragmentation and making communication seamless. With its modular design, it adapts to schools of any size, from small private academies to large universities.",
+      "At the heart of the system is a powerful role-based access control (RBAC) model. Every user—be it an admin, teacher, student, or parent—sees only what they need. Administrators manage users, roles, and permissions. Teachers record grades and attendance. Parents receive realtime notifications about their children’s progress. Students track their performance and assignments.",
+      "Teachers benefit from a unified journal that combines grades and attendance in a single workflow. No more switching between different tools or spreadsheets—the journal makes it easy to record performance, track participation, and add comments, all in one view. This not only saves time but also provides a more holistic picture of student performance.",
+      "Parents gain visibility into their child’s education without needing to rely on fragmented reports. Whenever a grade or attendance record is updated, parents receive realtime notifications directly from the system. This ensures they stay connected and informed, encouraging better collaboration between home and school.",
+      "Students enjoy a personalized dashboard where they can view assignments, grades, and attendance history. With clear access to deadlines and academic progress, students can take responsibility for their learning. Combined with exportable reports and attendance summaries, the system provides transparency that empowers learners.",
+      "Administrators can generate reports, seed dashboards with sample data, and configure permissions with ease. Thanks to its Supabase backend, LMS Alfa supports realtime data syncing and secure authentication out of the box. Built with React, TypeScript, and modern UI libraries, it delivers a smooth and responsive experience that scales as institutions grow.",
+      "Contact me for **DEMO**"
+    ]
+  },
+  {
+    "id": "proj-3",
+    "title": "Mush Browser",
+    "description": "Mush Browser is a lightweight, privacy-friendly web browser inspired by nature. With a bold red mushroom identity, it focuses on simplicity, speed, and a distraction-free experience. The project is still in development, and contributions are welcome.",
+    "status": "in-progress",
+    "year": "2025",
+    "stack": ["Electron", "JavaScript"],
+    "bannerUrl": "https://i.postimg.cc/jdT1rJfp/Desktop-1.jpg",
+    "demoLink": [],
+    "sourceCode": ["https://github.com/dasturchioka/my-browser"],
+    "demoVideo": "",
+    "paragraphs": [
+      "Mush Browser is designed with minimalism at its core. Inspired by the natural simplicity of a mushroom, it cuts away the noise of traditional browsers and gives users a clean, distraction-free space to focus on the web. I have more visual explanation about this project in my telegram channel: [Post Link](https://t.me/sardoraminov/161?single){target='_blank' style='color: #00a6fb; text-decoration: underline'}",
+      "Mush Browser is built with HTML, CSS, and JavaScript on top of Electron, providing a lightweight and functional foundation for browsing. While the current setup focuses on simplicity, the project is planned to migrate to React and a more flexible TypeScript-based environment, ensuring better scalability, extensibility, and developer experience over time.",
+      "Privacy is central to Mush Browser. Unlike mainstream browsers, it avoids unnecessary tracking and bloat, letting users explore the web without compromise. Essential features are included out of the box, while advanced options remain configurable for power users.",
+      "The browser’s UI takes inspiration from nature: clean lines, soft gradients, and an iconic red mushroom motif. Tabs, toolbars, and menus are intentionally minimal, with thoughtful transitions and theming options for those who like to customize their environment.",
+      "With a lightweight codebase and modern stack, Mush Browser is easily extensible. Developers can add experimental features or tailor the experience to niche use cases, making it suitable both for personal use and small community-driven projects.",
+      "This project is currently under active development. Feedback, suggestions, and contributions are highly encouraged. If you’re interested in helping shape Mush Browser, feel free to open issues, submit pull requests, or reach out directly.",
+      "Contact me for **DEMO**"
+    ]
+  },
+  {
+    "id": "proj-4",
+    "title": "Task Management App",
+    "description": "A simple yet powerful task management system built with Vue 3, TypeScript, TailwindCSS, Express.js, Prisma, and PostgreSQL. It features authentication, a responsive dashboard, and a kanban-style task board with statuses and urgency levels.",
+    "status": "archived",
+    "year": "2023",
+    "stack": [
+      "Vue 3",
+      "TypeScript",
+      "TailwindCSS",
+      "Express.js",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "bannerUrl": "https://i.ibb.co/WWm3d5VY/Screenshot-20250911-150303.jpg",
+    "demoLink": [],
+    "demoVideo": "https://youtu.be/CILI6vp8bHY",
+    "paragraphs": [
+      "The Task Management App allows users to sign up and sign in securely using email and password. Once logged in, they are greeted with a clean, minimal dashboard that highlights their projects and tasks in a simple kanban layout.",
+      "Tasks can be created, updated, and organized into four statuses: **Todo**, **In Progress**, **Completed**, and **Failed**. This structure gives users a clear overview of their workflow and progress at a glance.",
+      "In addition to statuses, every task can also be assigned one of four urgency levels: **Low**, **Normal**, **High**, or **Urgent**. This ensures users can quickly identify which tasks need immediate attention.",
+      "The kanban board interface is fully responsive and optimized for usability. Users can drag and drop tasks across columns, filter by urgency, and manage their workload intuitively without unnecessary complexity.",
+      "Here’s an example of the overview page:\n\n![Dashboard Screenshot](https://i.ibb.co/WWm3d5VY/Screenshot-20250911-150303.jpg)\n\nThe interface is minimal, with a strong focus on clarity and productivity.",
+      "Here’s an example of one single dashboard page:\n\n![Kanban Screenshot](https://i.ibb.co/gbqx905D/Screenshot-20250911-150312.jpg)\n\nThe kanban board makes it simple to visualize task progress and stay organized.",
+      "This project is designed to be simple and developer-friendly. The backend uses **Express.js + Prisma** to manage tasks and users in a **PostgreSQL database**, while the frontend is built with **Vue 3 + TailwindCSS**, making it fast, modern, and extensible.",
+      "Contact me for **DEMO**"
+    ]
+  },
+  {
+    "id": "proj-5",
+    "title": "Personal Bodyguard AI Chatbot",
+    "description": "An AI-powered chatbot that acts as a gatekeeper for my personal website. Built with Nuxt.js, TailwindCSS, TypeScript, and OpenAI, it provides an interactive, conversational layer between visitors and the site.",
+    "status": "in-progress",
+    "year": "2025",
+    "stack": ["Nuxt.js", "TailwindCSS", "TypeScript", "OpenAI"],
+    "bannerUrl": "https://i.ibb.co/0p3qyT52/Desktop-2.jpg",
+    "demoLink": [],
+    "sourceCode": ["https://github.com/dasturchioka/dasturchiokauz"],
+    "demoVideo": "",
+    "paragraphs": [
+      "The Gatekeeper Chatbot is a unique entry point to my personal website. Instead of navigating through static menus or links, visitors are greeted by a conversational assistant that acts as both a guide and a filter.",
+      "The chatbot is built with **Nuxt.js** on the frontend, styled with **TailwindCSS**, and powered by the **OpenAI API** for natural language understanding and responses. It integrates seamlessly into the site layout while remaining responsive across devices.",
+      "In addition to answering questions about me and my projects, the chatbot plays the role of a 'bodyguard.' It can guide users politely, redirect them to relevant sections, or humorously challenge unwanted queries, giving the site a personality and a layer of playful protection.",
+      "The system is written in **TypeScript** for better structure and maintainability, and uses Nuxt's ecosystem to ensure smooth server-side rendering and fast load times. TailwindCSS keeps the styling minimal, consistent, and adaptable to future redesigns.",
+      "Here’s an example screenshot of the chatbot in action:\n\n![Chatbot Screenshot](https://i.ibb.co/pBR8m2tf/s.jpg)\n\nThe design keeps the conversation front and center, creating a memorable first impression for visitors.",
+      "This project is still evolving, with future plans to add richer personality modes, memory for longer conversations, and integration with other site modules. Contributions and ideas are welcome to help expand its capabilities.",
+      "You can close this tab and revisit my website to have a chat with my bot again."
+    ]
+  },
+  {
+    "id": "proj-6",
+    "title": "Quiz Management System",
+    "description": "A web-based quiz management system built with Vue.js, TypeScript, TailwindCSS, Express.js, Prisma, and PostgreSQL. Originally developed for a teacher at TSUE, the project helps organize mid-semester exams for colleges and universities.",
+    "status": "successful",
+    "year": "2024",
+    "stack": [
+      "Vue.js",
+      "TypeScript",
+      "TailwindCSS",
+      "Express.js",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "bannerUrl": "https://i.ibb.co/0Vv5Lz4n/Screenshot-20250911-211522.jpg",
+    "demoVideo": "https://youtu.be/ykVlDlVJbuA",
+    "paragraphs": [
+      "The Quiz Management System is designed to streamline the process of organizing and conducting mid-semester exams in colleges and universities. It provides separate panels for teachers and students, ensuring clear separation of roles and responsibilities.",
+      "Teachers can manage their academic environment through an intuitive interface. Features include creating and managing classrooms, registering students, and preparing exams. Question packages can be created with correct answers, optional images, and subject-based separation (e.g., Microeconomics, Science, History).",
+      "Students can log in to their dedicated panel to view and attend exams prepared by their teachers. The interface is built for simplicity, ensuring that students can focus on answering questions without distractions.",
+      "The system supports different question formats, including image-based questions, making it versatile for a variety of subjects. Teachers have full CRUD control over classrooms, students, and exams, giving them flexibility in organizing their teaching workflow.",
+      "After exams are completed, results are automatically compiled into dashboards. Teachers can view detailed performance metrics and export results as **.xlsx** files for reporting, record keeping, or further analysis.",
+      "The backend leverages **Express.js and Prisma** to manage relational data in a **PostgreSQL database**, while the frontend is built with **Vue.js + TailwindCSS** for a modern, responsive UI. Written in **TypeScript**, the system is both robust and maintainable.",
+      "Contact me for **DEMO**"
+    ]
+  }
+]

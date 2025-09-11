@@ -70,10 +70,12 @@ useSeoMeta({
   robots: "index, follow",
   charset: "utf-8",
 });
+
+definePageMeta({layout: "non-container"})
 </script>
 <template>
   <div
-    class="h-screen font-sfpro container sm:w-[800px] mx-auto text-black dark:text-white transition-all"
+    class="h-screen font-sfpro container  mx-auto text-black dark:text-white transition-all"
   >
     <div class="toggler sm:my-10 my-4 flex items-center justify-between w-full">
       <h1
