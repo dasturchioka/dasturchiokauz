@@ -7,7 +7,7 @@
     "year": "2025",
     "stack": ["Next.js", "Supabase", "TailwindCSS", "TypeScript", "Vercel"],
     "bannerUrl": "https://i.ibb.co/SD3q66nT/Screenshot-20250911-013826.jpg",
-    "demoLink": ["https://www.aplusacademy.uz/"],
+    "demoLink": ["https://www.aplusacademy.uz/", "https://novda-mock-exam.vercel.app"],
     "demoVideo": "https://youtu.be/RELewHrQ7w4",
     "paragraphs": [
       "The IELTS CD Mock Exam Platform is a fully functional system used by multiple learning centres in Uzbekistan to conduct realistic IELTS practice tests. It closely mirrors the official computer-delivered IELTS exam, giving students the chance to prepare under authentic conditions.",

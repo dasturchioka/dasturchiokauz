@@ -329,7 +329,7 @@ useHead({
   >
     <div
       v-if="!hasLoaded"
-      class="w-full h-screen relative flex flex-col items-center justify-center font-mono px-2"
+      class="w-full h-screen relative flex flex-col items-center justify-center font-sfpro px-2"
     >
       <div class="titles font-sfpro flex flex-col items-center justify-between">
         <div class="bot-image w-[140px]">
@@ -348,7 +348,7 @@ useHead({
         </div>
       </div>
 
-      <div class="w-full max-w-4xl bg-black/90 backdrop-blur-sm rounded-xl border border-white/20 shadow-2xl overflow-hidden flex flex-col h-[500px]">
+      <div class="w-full max-w-4xl dark:bg-black/90 bg-gray-100 backdrop-blur-sm rounded-xl border dark:border-white/20 dark:shadow-2xl overflow-hidden flex flex-col h-[500px]">
         <!-- Chat Messages Area -->
         <div
           ref="messageBox"
@@ -381,7 +381,7 @@ useHead({
                 </svg>
               </div>
               <div
-                class="bg-gray-800/80 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 text-white/90 shadow-lg"
+                class="dark:bg-gray-800/80 bg-gray-200 dark:backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 dark:text-white/90 dark:shadow-lg"
               >
                 <div class="whitespace-pre-wrap break-words">
                   <span v-if="msg.html" v-html="msg.html" />
@@ -445,7 +445,7 @@ useHead({
                 </svg>
               </div>
               <div
-                class="bg-gray-800/60 backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 text-white/70 shadow-lg"
+                class="dark:bg-gray-800/60 dark:backdrop-blur-sm rounded-2xl rounded-tl-sm px-4 py-3 dark:text-white/70 text-neutral-800 shadow-lg"
               >
                 <div class="flex items-center space-x-2">
                   <div class="animate-pulse">{{ currentLoadingMessage }}</div>
@@ -462,7 +462,7 @@ useHead({
         </div>
 
         <!-- Input Area -->
-        <div class="border-t border-white/10 p-4 bg-black/50 backdrop-blur-sm">
+        <div class="border-t dark:border-white/10 p-4 dark:bg-black/50 bg-gray-200 backdrop-blur-sm">
           <div class="flex items-end space-x-3">
             <div class="flex-1 relative">
               <textarea
@@ -471,7 +471,7 @@ useHead({
                 @keydown.enter="handleSubmit"
                 @input="adjustTextareaHeight"
                 placeholder="Type your message..."
-                class="w-full bg-gray-800/60 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 resize-none outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all min-h-[48px] max-h-[120px]"
+                class="w-full dark:bg-gray-800/60 bg-gray-100 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 dark:text-white dark:placeholder-gray-400 resize-none outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all min-h-[48px] max-h-[120px]"
                 rows="1"
                 :disabled="isLoading"
                 autofocus
