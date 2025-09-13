@@ -1,63 +1,60 @@
-# Nuxt 3 Minimal Starter
+# Dasturchioka (dasturchioka.uz)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal portfolio, projects showcase, and blog site for Sardor Aminov, powered by Nuxt 3.
+
+## Features
+
+- SSR & Static generation (SSG)
+- Notion-enabled blog & product pages
+- Tailwind CSS styling & Shiki code highlighting
+- Pinia state management
+- Vercel Analytics & Speed Insights
+- Yandex Metrika integration
+
+## Requirements
+
+- Node.js >= 18
+- npm or yarn
 
 ## Setup
 
-Make sure to install the dependencies:
+Clone the repo and install dependencies:
 
 ```bash
-# npm
+git clone https://github.com/dasturchioka/dasturchiokauz.git
+cd dasturchiokauz
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
 ```
 
-## Development Server
+## Environment Variables
 
-Start the development server on `http://localhost:3000`:
+Create a `.env` file in the project root and provide your Notion credentials (if you want to pull live content):
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+NOTION_API_KEY=your_notion_api_key
+NOTION_BLOG_DATABASE_ID=your_blog_database_id
+NOTION_PRODUCT_DATABASE_ID=your_product_database_id
 ```
 
-## Production
+> If you don't set these, the site will fall back to the local JSON data in `server/data`.
 
-Build the application for production:
+## Available Scripts
 
-```bash
-# npm
-npm run build
+- `npm run dev`        
+  Start the development server (uses `nuxt dev --host`).
 
-# pnpm
-pnpm run build
+- `npm run build`      
+  Build the application for production.
 
-# yarn
-yarn build
-```
+- `npm run generate`   
+  Generate static files for SSG.
 
-Locally preview production build:
+- `npm run preview`    
+  Preview the production build locally.
 
-```bash
-# npm
-npm run preview
+- `npm run postinstall`
+  Prepare Nuxt once dependencies are installed.
 
-# pnpm
-pnpm run preview
+## Deployment
 
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Visit [Nuxt deployment docs](https://nuxt.com/docs/getting-started/deployment) for guidance on hosting this project.
