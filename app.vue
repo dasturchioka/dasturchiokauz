@@ -10,8 +10,8 @@ const { theme } = useTheme();
 const router = useRouter();
 const route = useRoute();
 
-const showLoader = ref(true);
-const showFallback = ref(true); // NEW: controls fallback div separately
+// const showLoader = ref(true);
+// const showFallback = ref(true); // NEW: controls fallback div separately
 
 // Disable automatic scroll changes on navigation
 onMounted(() => {
@@ -22,44 +22,44 @@ onMounted(() => {
   };
 });
 
-// Check if loader already dismissed in this session
-onMounted(() => {
-  if (import.meta.client) {
-    if (route.query.access === "granted-by-dasturchioka") {
-      showLoader.value = false;
-      sessionStorage.setItem("loaderDismissed", "true");
-    }
+// // Check if loader already dismissed in this session
+// onMounted(() => {
+//   if (import.meta.client) {
+//     if (route.query.access === "granted-by-dasturchioka") {
+//       showLoader.value = false;
+//       sessionStorage.setItem("loaderDismissed", "true");
+//     }
 
-    if (sessionStorage.getItem("loaderDismissed") === "true") {
-      showLoader.value = false;
-    }
-  }
-});
+//     if (sessionStorage.getItem("loaderDismissed") === "true") {
+//       showLoader.value = false;
+//     }
+//   }
+// });
 
-if (import.meta.client) {
-  watch(
-    () => route.query.access,
-    (newVal: string) => {
-      if (newVal === "granted-by-dasturchioka") {
-        showLoader.value = false;
-        sessionStorage.setItem("loaderDismissed", "true");
-      }
-    }
-  );
-}
+// if (import.meta.client) {
+//   watch(
+//     () => route.query.access,
+//     (newVal: string) => {
+//       if (newVal === "granted-by-dasturchioka") {
+//         showLoader.value = false;
+//         sessionStorage.setItem("loaderDismissed", "true");
+//       }
+//     }
+//   );
+// }
 
-function handleLoaderDismissed() {
-  sessionStorage.setItem("loaderDismissed", "true");
+// function handleLoaderDismissed() {
+//   sessionStorage.setItem("loaderDismissed", "true");
 
-  // Start fading out fallback
-  showFallback.value = false;
+//   // Start fading out fallback
+//   showFallback.value = false;
 
-  // Wait for CSS transition to finish before killing layout
-  setTimeout(() => {
-    showLoader.value = false;
-    router.push("/");
-  }, 600); // match this to transition duration
-}
+//   // Wait for CSS transition to finish before killing layout
+//   setTimeout(() => {
+//     showLoader.value = false;
+//     router.push("/");
+//   }, 600); // match this to transition duration
+// }
 </script>
 
 <template>
@@ -67,7 +67,7 @@ function handleLoaderDismissed() {
     <div
       class="bg-white text-black dark:bg-[#151515] dark:text-white transition-all duration-500"
     >
-      <NuxtLayout name="non-container" v-if="showLoader">
+      <!-- <NuxtLayout name="non-container" v-if="showLoader">
         <ClientOnly>
           <WebsiteLoader @dismissed="handleLoaderDismissed" />
           <template #fallback>
@@ -79,9 +79,9 @@ function handleLoaderDismissed() {
             </div>
           </template>
         </ClientOnly>
-      </NuxtLayout>
+      </NuxtLayout> -->
 
-      <NuxtLayout class="still this container tho" v-else>
+      <NuxtLayout class="still this container tho">
         <div
           class="h-[100dvh] overflow-x-hidden flex flex-col items-center justify-between overflow-y-scroll"
         >
