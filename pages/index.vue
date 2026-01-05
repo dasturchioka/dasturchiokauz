@@ -44,26 +44,16 @@ useHead({
         <LazyNuxtImg
           loading="lazy"
           class="w-full h-full rounded-2xl object-cover"
-          src="/images/profile1.jpg"
+          src="/images/profile3.jpg"
           alt="Sardor Aminov, dasturchioka founder novdaunion"
         />
       </div>
     </div>
     <div class="text-container flex flex-col items-start space-y-2">
       <div class="top flex flex-col items-start my-4">
-        <h1 class="title font-bold md:text-6xl mb-2 sm:text-4xl text-4xl">
+        <h1 class="title font-bold md:text-6xl sm:text-4xl text-4xl">
           Sardor Aminov
         </h1>
-        <div
-          class="badge rounded-full sm:px-4 sm:py-2 px-2 font-mont text-lg border dark:border-white w-auto"
-        >
-          {{
-            Math.floor(
-              (new Date().getTime() - new Date("2006-03-07").getTime()) /
-                (1000 * 60 * 60 * 24 * 365.25)
-            ) + " y.o"
-          }}, Uzbek
-        </div>
       </div>
       <div class="middle">
         <p class="font-mont text-3xl font-sfpro italic">

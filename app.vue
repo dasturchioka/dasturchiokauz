@@ -102,7 +102,7 @@ onMounted(() => {
               :animation-duration="0.5"
               :stagger-delay="0.12"
             />
-            <ThemeToggle />
+            <!-- <ThemeToggle /> -->
           </nav>
           <SpeedInsights />
           <Analytics />

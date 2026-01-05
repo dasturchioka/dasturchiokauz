@@ -20,7 +20,8 @@ useHead({
         headline: "About Dasturchioka",
         description:
           "Full biography and professional background of Dasturchioka (Sardor Aminov).",
-        image: "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
+        image:
+          "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
         url: "https://dasturchioka.uz/about",
         author: {
           "@type": "Person",
@@ -51,7 +52,8 @@ useHead({
     {
       key: "og:image",
       property: "og:image",
-      content: "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
+      content:
+        "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
     },
     {
       key: "og:url",
@@ -103,78 +105,27 @@ const { theme } = useTheme();
           Open to freelance opportunities
         </p>
 
-      <p>
-          I was born in 2006 in Khorezm, Uzbekistan. My parents noticed early
-          development compared to my peers, so I began school at the age of six,
-          already knowing how to read, write, and perform basic arithmetic.
-        </p>
+        <p>Just a fullstack engineer from Khorezm, Uzbekistan</p>
 
-      <p>
-          From a young age, I was fascinated by technology — from mechanical
-          mobile phones and digital cameras to classic desktop computers. The
-          first game I ever played was <b>GTA Vice City</b> on my old desktop.
-        </p>
+        <p>Work with TypeScript and GoLang for fun</p>
 
         <p>
-          My journey into foreign languages began in the 5th grade, when I
-          started learning English. Since then, I have continued improving, and
-          in 2023 I earned my first <b>IELTS certificate with a score of 6</b>.
-        </p>
-
-        <p>
-          I began programming in 2020 at
-          <a
-            class="font-bold underline text-white bg-[#3abff0] rounded px-1 transition-all"
-            target="_blank"
-            href="https://www.datatalim.uz/"
+          Currently work at
+          <a class="underline" href="https://lumexagency.com"
+            ><b>@Lumex Agency</b></a
           >
-            @DATA Ta'lim Stansiyasi </a
-          >, where I completed a backend-focused web development program.
-          Following my graduation, I remained at the academy as an
-          <b>assistant mentor</b>, where I supported the lead instructor in
-          teaching students, conducted supplementary online classes, and helped
-          organize learning activities. Beyond mentoring, I collaborated closely
-          with
-          <a
-            class="font-bold underline"
-            target="_blank"
-            href="https://t.me/kamrondev"
-          >
-            Kamron aka
-          </a>
-          on numerous large-scale CRM and LMS projects, gaining hands-on
-          experience in building production-ready systems while refining both my
-          technical and leadership skills.
+          as a middle fullstack engineer since October 2025
         </p>
-
+        <p>Besides, I build for fun</p>
         <p>
-          In May 2025, I concluded my time at
-          <a
-            class="font-bold underline bg-[#ff4f28] text-white rounded px-1 transition-all"
-            target="_blank"
-            href="https://coddycamp.uz/"
-          >
-            @CoddyCamp IT Academy </a
-          >, where I have worked as a mentor for 6 months. Shortly after, I
-          founded my own company with a talented team of seven. Today, I serve
-          as the founder and tech lead, collaborating with major organizations,
-          schools, learning centers, and manufacturers.
+          So I like gaming, more like story games; Red Dead Redemption 2 is my
+          favourite
         </p>
-
         <p>
-          The deeper I go into programming, the more I feel connected to the
-          craft. Currently, I am exploring
-          <span><i class="devicon-rust-original"></i> Rust</span> and
-          <span><i class="devicon-go-plain colored"></i> Go</span>.
+          Also like playing CS2 with my friends but I suck at this game, got
+          about ~900 hours on Steam on this game
         </p>
-
-        <p>
-          My development environment of choice is
-          <span class="dark:text-white text-black transition-all">
-            <i class="devicon-archlinux-plain colored"></i>
-            Arch Linux </span
-          >.
-        </p>
+        <p>Not that interesting person, but can be talkative</p>
       </div>
 
       <NuxtMarquee
@@ -234,7 +185,7 @@ const { theme } = useTheme();
           <div class="stack dark:text-white text-black transition-all">
             <i class="devicon-nuxtjs-plain colored"></i> Nuxt.js
           </div>
-          <div class="stack dark:text-white text-black transition-all">
+          <div class="stack dark:text-white text-black transition-all mr-4">
             <i class="devicon-firebase-plain colored"></i> Firebase
           </div>
         </div>

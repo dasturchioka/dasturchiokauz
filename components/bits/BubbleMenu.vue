@@ -66,22 +66,22 @@ const DEFAULT_ITEMS: MenuItem[] = [
     hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
     icon: LucideBadgeInfo,
   },
-  {
-    label: "Products",
-    href: "/products",
-    ariaLabel: "Products",
-    rotation: 8,
-    hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
-    icon: LucideApple,
-  },
-  {
-    label: "Services",
-    href: "/services",
-    ariaLabel: "Services",
-    rotation: 8,
-    hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
-    icon: LucidePencilRuler,
-  },
+  // {
+  //   label: "Products",
+  //   href: "/products",
+  //   ariaLabel: "Products",
+  //   rotation: 8,
+  //   hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
+  //   icon: LucideApple,
+  // },
+  // {
+  //   label: "Services",
+  //   href: "/services",
+  //   ariaLabel: "Services",
+  //   rotation: 8,
+  //   hoverStyles: { bgColor: "#00a6fb", textColor: "#ffffff" },
+  //   icon: LucidePencilRuler,
+  // },
 ];
 
 const props = withDefaults(defineProps<BubbleMenuProps>(), {
