@@ -28,7 +28,8 @@ useHead({
     {
       key: "og:image",
       property: "og:image",
-      content: "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
+      content:
+        "https://www.dasturchioka.uz/_vercel/image?url=%2Fimages%2Fprofile1.jpg&w=1536&q=100",
     },
     { key: "og:url", property: "og:url", content: "https://dasturchioka.uz" },
   ],
@@ -37,89 +38,17 @@ useHead({
 
 <template>
   <div
-    class="home-page container mx-auto sm:px-4 px-2 dark:text-white text-black font-sfpro"
+    class="home-page h-screen flex items-center justify-center container mx-auto sm:px-4 px-2 dark:text-white text-black font-sfpro"
   >
-    <div class="images h-auto mt-4">
-      <div class="img">
-        <LazyNuxtImg
-          loading="lazy"
-          class="w-full h-full rounded-2xl object-cover"
-          src="/images/profile3.jpg"
-          alt="Sardor Aminov, dasturchioka founder novdaunion"
-        />
-      </div>
-    </div>
-    <div class="text-container flex flex-col items-start space-y-2">
+    <div class="text-container flex flex-col space-y-2">
       <div class="top flex flex-col items-start my-4">
         <h1 class="title font-bold md:text-6xl sm:text-4xl text-4xl">
           Sardor Aminov
         </h1>
       </div>
       <div class="middle">
-        <p class="font-mont text-3xl font-sfpro italic">
-          mentor & fullstack web dev.
-        </p>
-        <p></p>
-        <div class="social-media flex items-center space-x-4 mt-8">
-          <TelegramIcon />
-          <LinkedinLogo />
-          <GithubIcon />
-          <TwitterLogo />
-          <YTLogo />
-        </div>
+        <p class="font-mont text-3xl font-sfpro italic">Software Engineer</p>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-.images {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-  gap: 15px;
-}
-
-.images .img {
-  height: 220px;
-}
-
-@media (max-width: 768px) {
-  .images {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
-
-  .images .img {
-    height: 140px;
-  }
-}
-
-@media (max-width: 436px) {
-  .images {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-
-  .images .img {
-    height: 110px;
-  }
-}
-
-@media (max-width: 350px) {
-  .images .img:nth-child(1),
-  .images .img:nth-child(2) {
-    display: none;
-  }
-
-  .images {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
-
-  .images .img {
-    height: 140px;
-  }
-}
-
-.images img {
-  filter: grayscale(100%);
-}
-</style>
