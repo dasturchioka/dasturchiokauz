@@ -47,7 +47,7 @@ useHead({
         </h1>
       </div>
       <div class="middle">
-        <p class="font-mont text-3xl font-sfpro italic">Software Engineer</p>
+        <p class="font-mont text-3xl font-sfpro italic flex items-center gap-2">Software Engineer @ <a href="https://modme.uz" target="_blank" class="border px-2 py-1 transition-all rounded-lg hover:border-[#ff8000]">Modme</a></p>
       </div>
     </div>
   </div>
