@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { Analytics } from "@vercel/analytics/nuxt";
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
-import "./assets/css/main.css";
 </script>
 
 <template>
   <div>
     <div
-      class="bg-white text-black dark:bg-[#151515] dark:text-white transition-all duration-500"
+      class="bg-[#151515] text-white transition-all duration-500"
     >
       <NuxtLayout class="still this container tho">
         <div

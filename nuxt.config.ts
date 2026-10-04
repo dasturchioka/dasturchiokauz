@@ -6,6 +6,23 @@ export default defineNuxtConfig({
 
   vite: { plugins: [tailwindcss()] },
   ssr: true,
+  features: {
+    inlineStyles: true,
+  },
+  $development: {
+    app: {
+      head: {
+        link: [
+          {
+            // Load CSS before painting SSR HTML instead of waiting for Vite's JS.
+            key: "site-styles",
+            rel: "stylesheet",
+            href: "/_nuxt/assets/css/main.css?direct",
+          },
+        ],
+      },
+    },
+  },
   modules: [
     "@nuxt/image",
     "@pinia/nuxt",
@@ -47,6 +64,32 @@ export default defineNuxtConfig({
         lang: "en",
       },
       link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicon-32x32.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicon-16x16.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/apple-touch-icon.png",
+        },
+        {
+          rel: "manifest",
+          href: "/site.webmanifest",
+        },
         {
           rel: "stylesheet",
           type: "text/css",

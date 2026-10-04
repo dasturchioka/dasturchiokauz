@@ -328,3 +328,90 @@ a {
     @apply bg-background text-foreground;
   }
 }
+
+.home-page {
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 450ms ease-out;
+}
+
+.home-page .typing-letter {
+  animation: home-fade-in var(--letter-duration) ease-out
+    var(--letter-delay) backwards;
+}
+
+.home-page .fade-in {
+  animation: home-fade-in var(--fade-duration, var(--icon-duration))
+    var(--reveal-ease) var(--fade-delay, 0ms) backwards;
+}
+
+.home-page .avatar-reveal {
+  --fade-delay: var(--avatar-delay);
+  --fade-duration: 900ms;
+}
+
+.home-page .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 400ms var(--reveal-ease);
+}
+
+.home-page .social-link svg {
+  opacity: 0.65;
+  transition:
+    opacity 350ms ease-out,
+    transform 400ms var(--reveal-ease);
+}
+
+.home-page .social-link:is(:hover, :focus-visible) {
+  transform: translateY(-2px);
+}
+
+.home-page .social-link:is(:hover, :focus-visible) svg {
+  opacity: 1;
+}
+
+.home-page .social-link-telegram:is(:hover, :focus-visible) svg {
+  transform: translateY(-1px) scale(1.08);
+}
+
+.home-page .social-link-linkedin:is(:hover, :focus-visible) svg {
+  transform: translateY(-1px) scale(1.08);
+}
+
+.home-page .social-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.home-page .social-link:active {
+  transform: scale(0.96);
+}
+
+@keyframes home-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .fade-in,
+  .home-page .typing-letter {
+    animation-duration: 150ms;
+    animation-delay: 0ms;
+  }
+
+  .home-page .social-link,
+  .home-page .social-link svg {
+    transition: opacity 150ms ease-out;
+  }
+
+  .home-page .social-link:is(:hover, :focus-visible, :active),
+  .home-page .social-link:is(:hover, :focus-visible) svg {
+    transform: none;
+  }
+}
